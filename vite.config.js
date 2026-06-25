@@ -15,7 +15,7 @@ export default defineConfig({
         careers: resolve(__dirname, 'careers.html'),
         careersAdmin: resolve(__dirname, 'careers-admin.html'),
         clientBrief: resolve(__dirname, 'client-brief.html'),
-        fractionalCxo: resolve(__dirname, 'fractional-cxo.html'),
+        explore: resolve(__dirname, 'explore.html'),
         expertApply: resolve(__dirname, 'expert-apply.html'),
       },
     },
