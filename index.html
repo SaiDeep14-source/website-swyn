@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWYN</title>
+  <meta name="description" content="" />
+  <link rel="icon" type="image/png" href="./reallogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1 — NAVIGATION (sticky)
+       ═══════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="./reallogo.png" alt="SWYN Logo" class="nav__logo-img" />
+        SWYN
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="#what-we-do" class="nav__link">How we work</a>
+        <a href="#disciplines-root" class="nav__link">Our capabilities</a>
+        <a href="#process-root" class="nav__link">How it works</a>
+        <a href="#about-us" class="nav__link">About</a>
+      </div>
+      <a href="./client-brief.html" class="nav__cta">
+        <span>Find a CXO</span>
+        <span class="nav__cta-arrow" aria-hidden="true">→</span>
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2 — HERO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="./hero-bg.png" alt="" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <span class="eyebrow">Fractional CXO &amp; Expert Advisory — India</span>
+      <h1 class="hero__headline">
+        Deploy the minds<br />that built the giants.
+      </h1>
+      <p class="hero__subline">
+        Access India’s most seasoned C-Suite leaders on a fractional, project-based model. Senior advisory. Full-scale consulting. One firm built for what's next.
+      </p>
+      <div class="hero__ctas">
+        <a href="./fractional-cxo.html" class="btn btn--primary hero__btn hero__btn--primary">
+          <span>Tell us who do you need</span>
+          <span class="hero__btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="./expert-apply.html" class="btn btn--ghost hero__btn hero__btn--ghost">
+          <span>Apply as an expert</span>
+          <span class="hero__btn-arrow hero__btn-arrow--ghost" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 4 — THE PROBLEM
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section section--white" id="what-we-do">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="eyebrow eyebrow--dark">HOW WE WORK</span>
+        <h2 class="section__headline section__headline--dark">
+          The right person<br>for the problem.
+        </h2>
+      </div>
+      <div class="section__body fade-in">
+        <p class="section__text section__text--dark">
+          You tell us the problem. We find the right person — someone who's actually solved it before. They come into your business, get to work, and deliver. No delays, no fluff, just results.
+        </p>
+      </div>
+      <div class="stats fade-in">
+        <div class="stat">
+          <span class="stat__number">200+</span>
+          <span class="stat__label">operators, not advisors</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">5</span>
+          <span class="stat__label">domains, end to end</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">Weeks</span>
+          <span class="stat__label">not months — to deploy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2 — DISCIPLINES ACCORDION (React)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="disciplines-root"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2.5 — BUILT IN THE BOARDROOMS OF
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="carousel-root"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 3 — THE PROCESS (React Component)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="process-root"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6 — WHY SWYN EXISTS (React Component)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="why-swyn-root"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 8 — MILESTONE OVERLAY
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="milestone" style="position: relative; height: 35vh; min-height: 350px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <!-- Background Image -->
+    <div style="position: absolute; inset: 0; background-image: url('./milestone-bg.png'); background-size: cover; background-position: center 30%; z-index: 0;"></div>
+    <!-- Dark Gradient Overlay for Legibility -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(19,19,22,0.3) 0%, rgba(19,19,22,0.7) 100%); z-index: 1;"></div>
+    
+    <div class="container fade-in" style="position: relative; z-index: 2; text-align: center;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem); font-style: italic; font-weight: 400; line-height: 1.3; color: var(--text-cream); margin: 0; max-width: 900px; margin-inline: auto;">
+        "What got you to this milestone will not get you to the next."
+      </h2>
+    </div>
+  </section>
+
+  <section class="section section--warm about-founder" id="about-us">
+    <div class="container">
+      <div class="about-founder__grid">
+        <div class="about-founder__intro fade-in">
+          <span class="eyebrow eyebrow--dark">About us</span>
+          <h2 class="section__headline section__headline--dark">
+            Led by people who understand the weight of senior decisions.
+          </h2>
+          <p class="section__text section__text--dark">
+            SWYN was created to help Indian companies access seasoned leadership at the exact moment it matters: during growth, transition, transformation, or a high-stakes mandate.
+          </p>
+        </div>
+
+        <article class="founder-card fade-in" aria-labelledby="founder-name">
+          <div class="founder-card__portrait">
+            <img
+              src="/shaamlie-hero.jpg"
+              alt="Shaamlie Anggane, Founder and CEO of SWYN"
+              width="1024"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="founder-card__content">
+            <span class="founder-card__role">Founder &amp; CEO</span>
+            <h3 class="founder-card__name" id="founder-name">Shaamlie Anggane</h3>
+            <p class="founder-card__bio">
+              Shaamlie brings over 23 years of experience across some of the world's most demanding financial institutions — Nomura, Credit Suisse, Deutsche Bank, UBS, and Morgan Stanley — where she held senior leadership roles spanning COO, Business Management, and operational strategy across India and global markets.
+            </p>
+            <p class="founder-card__note">
+              SWYN is built on a belief she developed from that work: the most valuable leadership is often needed at a specific moment, not on a permanent basis. She created SWYN to give Indian companies structured access to the kind of senior operating judgment that typically lives inside large institutions — without requiring a full-time hire to unlock it.
+            </p>
+            <a
+              class="founder-card__link"
+              href="https://www.linkedin.com/in/shaamlie-anggane-81201713"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Shaamlie on LinkedIn <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 9 — FOOTER
+       ═══════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Huge Branding Area -->
+        <div class="footer__brand">
+          <a href="#" class="footer__brand-link">
+            <img src="./reallogo.png" alt="SWYN Logo" class="footer__brand-img" />
+            <span class="footer__brand-text">SWYN</span>
+          </a>
+          <p class="footer__brand-tagline">Deploy the minds that built the giants.</p>
+        </div>
+        
+        <!-- Link Columns -->
+        <div class="footer__columns">
+          <div class="footer__col">
+            <span class="footer__col-title">Platform</span>
+            <a href="#what-we-do" class="footer__link">How we work</a>
+            <a href="#disciplines-root" class="footer__link">Our capabilities</a>
+            <a href="#process-root" class="footer__link">How it works</a>
+            <a href="./client-brief.html" class="footer__link">Find a CXO</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Company</span>
+            <a href="#about-us" class="footer__link">About Us</a>
+            <a href="./careers.html" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Contact</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Legal</span>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+            <a href="#" class="footer__link">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bottom Legal Bar -->
+      <div class="footer__bottom">
+        <span>© 2025 SWYN. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="https://www.linkedin.com/company/skillswhichyouneed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./process-mount.jsx"></script>
+  <script type="module" src="./carousel-mount.jsx"></script>
+  <script type="module" src="./accordion-mount.jsx"></script>
+  <script type="module" src="./why-swyn-mount.jsx"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
