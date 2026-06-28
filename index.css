@@ -178,6 +178,7 @@ button {
   left: 0;
   right: 0;
   z-index: 1000;
+  background: transparent;
   transition: background 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
   border-bottom: 1px solid transparent;
 }
@@ -225,8 +226,13 @@ button {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   transition: color 0.3s ease;
+}
+
+/* Keep the landing-page header transparent while brightening only its words. */
+.nav:not(.nav--scrolled) .nav__link {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .nav__link:hover {
