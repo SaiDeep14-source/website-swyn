@@ -221,11 +221,11 @@ button {
 }
 
 .nav__link {
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   transition: color 0.3s ease;
 }
 
@@ -961,7 +961,7 @@ button {
 
 .founder-card {
   display: grid;
-  grid-template-columns: 6.5rem 1fr;
+  grid-template-columns: clamp(11rem, 19vw, 15rem) 1fr;
   gap: clamp(1.25rem, 2vw, 1.75rem);
   padding: clamp(1.4rem, 2.5vw, 2.15rem);
   background:
@@ -973,8 +973,8 @@ button {
 .founder-card__portrait {
   position: relative;
   flex: 0 0 auto;
-  width: 6.5rem;
-  height: 6.5rem;
+  width: 100%;
+  height: auto;
   aspect-ratio: 1;
   overflow: hidden;
   background: #e8ded3;
@@ -1506,7 +1506,7 @@ button {
   }
 
   .founder-card__portrait {
-    width: 6.5rem;
+    width: min(100%, 18rem);
   }
 
   /* Footer */
