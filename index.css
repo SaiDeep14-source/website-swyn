@@ -178,16 +178,15 @@ button {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: transparent;
   transition: background 0.4s var(--ease-out), border-color 0.4s var(--ease-out);
   border-bottom: 1px solid transparent;
 }
 
 .nav--scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom-color: #e8e4dd;
+  background: rgba(19, 19, 22, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: rgba(245, 240, 232, 0.08);
 }
 
 .nav__inner {
@@ -222,17 +221,12 @@ button {
 }
 
 .nav__link {
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-secondary);
   transition: color 0.3s ease;
-}
-
-/* Keep the landing-page header transparent while brightening only its words. */
-.nav:not(.nav--scrolled) .nav__link {
-  color: rgba(255, 255, 255, 0.82);
 }
 
 .nav__link:hover {
@@ -967,9 +961,10 @@ button {
 
 .founder-card {
   display: grid;
-  grid-template-columns: clamp(11rem, 19vw, 15rem) 1fr;
-  gap: clamp(1.25rem, 2vw, 1.75rem);
-  padding: clamp(1.4rem, 2.5vw, 2.15rem);
+  grid-template-columns: minmax(16rem, 18rem) minmax(0, 1fr);
+  gap: clamp(1.75rem, 3vw, 3rem);
+  align-items: start;
+  padding: clamp(1.75rem, 2.5vw, 2.5rem);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 248, 238, 0.72) 100%);
   border: 1px solid rgba(49, 42, 35, 0.1);
@@ -978,10 +973,10 @@ button {
 
 .founder-card__portrait {
   position: relative;
-  flex: 0 0 auto;
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  min-height: 0;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   background: #e8ded3;
 }
@@ -992,11 +987,15 @@ button {
   height: 100%;
   color: transparent;
   object-fit: cover;
-  object-position: center 24%;
+  object-position: center 20%;
 }
 
 .founder-card__content {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.35rem 0 0;
 }
 
 .founder-card__role {
@@ -1512,7 +1511,10 @@ button {
   }
 
   .founder-card__portrait {
-    width: min(100%, 18rem);
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
   }
 
   /* Footer */
@@ -1568,6 +1570,16 @@ button {
 
   .founder-card {
     padding: 1.25rem;
+  }
+
+  .founder-card__portrait {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .founder-card__content {
+    padding: 0;
   }
 
   .founder-card__link {
