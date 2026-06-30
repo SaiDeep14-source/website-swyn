@@ -14,3 +14,23 @@ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-m
 
   expertCards.forEach((card) => expertObserver.observe(card));
 }
+const grid = document.querySelector('.experts__grid');
+const next = document.querySelector('.experts-next');
+const prev = document.querySelector('.experts-prev');
+
+let current = 0;
+const visibleCards = 5;
+
+next.addEventListener('click', () => {
+    if (current < expertCards.length - visibleCards) {
+        current++;
+        grid.style.transform = `translateX(-${current * 20}%)`;
+    }
+});
+
+prev.addEventListener('click', () => {
+    if (current > 0) {
+        current--;
+        grid.style.transform = `translateX(-${current * 20}%)`;
+    }
+});
