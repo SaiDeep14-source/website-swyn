@@ -58,10 +58,19 @@
   padding-bottom: .35rem;
 }
 
+.experts-slider {
+    position: relative;
+    overflow: hidden;
+}
+
 .experts__grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(.75rem, 1.4vw, 1.25rem);
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.5s ease;
+}
+
+.expert-card {
+    flex: 0 0 calc(20% - 0.8rem);
 }
 
 .expert-card {
@@ -121,6 +130,37 @@
   .expert-card.is-visible { opacity: 1; transform: none; }
   .expert-card.is-visible:hover { transform: translateY(-5px); }
 }
+
+/* ADD THIS HERE */
+
+.experts-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.experts-prev {
+    left: -25px;
+}
+
+.experts-next {
+    right: -25px;
+}
+
+.experts-arrow:hover {
+    background: rgba(255,255,255,.15);
+}
+
+/* EXISTING CODE CONTINUES */
 
 @media (max-width: 1050px) {
   .experts__grid { grid-template-columns: repeat(3, 1fr); }
