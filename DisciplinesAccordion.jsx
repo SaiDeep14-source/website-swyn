@@ -39,7 +39,7 @@ const disciplines = [
     title: 'Finance',
     subtitle: 'Capital readiness',
     description: [
-      'Financial planning, and investor readiness.',
+      'Financial planning and investor readiness.',
     ],
   },
 ];
