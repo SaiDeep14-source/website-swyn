@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./index.css" />
+  <link rel="stylesheet" href="./experts.css" />
 </head>
 <body>
 
@@ -57,7 +58,7 @@
         Access India’s most seasoned C-Suite leaders on a fractional, project-based model. Senior advisory. Full-scale consulting. One firm built for what's next.
       </p>
       <div class="hero__ctas">
-        <a href="./client-brief.html" class="btn btn--primary hero__btn hero__btn--primary">
+        <a href="./explore.html" class="btn btn--primary hero__btn hero__btn--primary">
           <span>Tell us who do you need</span>
           <span class="hero__btn-arrow" aria-hidden="true">→</span>
         </a>
@@ -119,6 +120,52 @@
   <div id="process-root"></div>
 
   <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6 — OUR EXPERTS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="experts" id="experts-root" aria-labelledby="experts-title">
+    <div class="experts__inner">
+      <header class="experts__header">
+        <span class="experts__eyebrow">Our experts</span>
+        <h2 class="experts__title" id="experts-title">The minds,<br>by name.</h2>
+        <p class="experts__intro">Senior operators who have already led at the scale you are building toward—available for focused, hands-on mandates.</p>
+      </header>
+
+      <div class="experts__grid">
+        <article class="expert-card" data-index="01">
+          <img class="expert-card__portrait" src="./experts/rajnish-virmani.png" alt="Rajnish Virmani" loading="lazy" decoding="async" />
+          <p class="expert-card__role">Fractional CEO</p>
+          <h3 class="expert-card__name">Rajnish Virmani</h3>
+          <div class="expert-card__history"><span>Formerly</span><p>Zoom · Reliance BPO</p></div>
+        </article>
+        <article class="expert-card" data-index="02">
+          <img class="expert-card__portrait" src="./experts/rohith-ghosh.png" alt="Rohith Ghosh" loading="lazy" decoding="async" />
+          <p class="expert-card__role">Fractional CEO</p>
+          <h3 class="expert-card__name">Rohith Ghosh</h3>
+          <div class="expert-card__history"><span>Formerly</span><p>Career details available on request</p></div>
+        </article>
+        <article class="expert-card" data-index="03">
+          <img class="expert-card__portrait" src="./experts/sahil-bhushan.jpeg" alt="Sahil Bhushan" loading="lazy" decoding="async" />
+          <p class="expert-card__role">Fractional CMO</p>
+          <h3 class="expert-card__name">Sahil Bhushan</h3>
+          <div class="expert-card__history"><span>Formerly</span><p>McCann · HCL Tech · TO THE NEW</p></div>
+        </article>
+        <article class="expert-card" data-index="04">
+          <img class="expert-card__portrait" src="./experts/shrikanth-s.png" alt="Shrikanth S" loading="lazy" decoding="async" />
+          <p class="expert-card__role">Fractional CMO</p>
+          <h3 class="expert-card__name">Shrikanth S</h3>
+          <div class="expert-card__history"><span>Formerly</span><p>Amazon · CRED</p></div>
+        </article>
+        <article class="expert-card" data-index="05">
+          <img class="expert-card__portrait" src="./experts/ashish-anand.png" alt="Ashish Anand" loading="lazy" decoding="async" />
+          <p class="expert-card__role">Fractional CMO</p>
+          <h3 class="expert-card__name">Ashish Anand</h3>
+          <div class="expert-card__history"><span>Formerly</span><p>CK Birla Group · OYO</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════
        SECTION 6 — WHY SWYN EXISTS (React Component)
        ═══════════════════════════════════════════════════════════ -->
   <div id="why-swyn-root"></div>
@@ -156,7 +203,7 @@
         <article class="founder-card fade-in" aria-labelledby="founder-name">
           <div class="founder-card__portrait">
             <img
-              src="./shaamlie-hero.jpg"
+              src="/shaamlie-hero.jpg"
               alt="Shaamlie Anggane, Founder and CEO of SWYN"
               width="1024"
               height="1024"
@@ -172,7 +219,6 @@
             </p>
             <p class="founder-card__note">
               SWYN was built on a simple idea, growing businesses should have access to experienced leadership without the commitment of a permanent executive hire. The foundation of SWYN is built on the belief that the right expertise, delivered at the right time, can create meaningful business impact. Today, SWYN helps companies engage seasoned CXOs and domain experts who bring practical experience, strategic insight, and measurable impact.
-
             </p>
             <a
               class="founder-card__link"
@@ -242,6 +288,7 @@
   <script type="module" src="./carousel-mount.jsx"></script>
   <script type="module" src="./accordion-mount.jsx"></script>
   <script type="module" src="./why-swyn-mount.jsx"></script>
+  <script type="module" src="./experts.js"></script>
   <script type="module" src="./main.js"></script>
 </body>
 </html>
