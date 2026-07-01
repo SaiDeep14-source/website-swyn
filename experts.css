@@ -66,25 +66,43 @@
   position: relative;
 }
 
-/* The viewport clips the sliding track. */
+/* The viewport is the swipeable scroller: native touch/trackpad swipe,
+   with snap so cards settle neatly. Scrollbar is hidden. */
 .experts__viewport {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* old Edge */
+  cursor: grab;
+}
+.experts__viewport::-webkit-scrollbar { display: none; }  /* Chrome/Safari */
+
+/* While dragging with a mouse, pause snap so it feels smooth. */
+.experts__viewport.is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
 }
 
-/* The track: a flex row that slides left/right via translateX. */
+/* The track: a flex row wider than the viewport. */
 .experts__grid {
   --gap: 1rem;
   --visible: 5;            /* cards shown at once */
   display: flex;
   gap: var(--gap);
-  transition: transform .5s var(--ease-out);
-  will-change: transform;
 }
 
-/* Each card takes an equal share so exactly --visible fit in view. */
+/* Don't let the portrait get "picked up" while drag-swiping. */
+.experts__grid img { -webkit-user-drag: none; user-select: none; }
+
+/* Each card takes an equal share so exactly --visible fit in view,
+   and snaps to the left edge when swiped. */
 .expert-card {
   flex: 0 0 calc((100% - (var(--visible) - 1) * var(--gap)) / var(--visible));
   min-width: 0;
+  scroll-snap-align: start;
 }
 
 .expert-card {
@@ -145,33 +163,8 @@
   .expert-card.is-visible:hover { transform: translateY(-5px); }
 }
 
-/* ── Arrows ───────────────────────────────────────────────────── */
-.experts-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: grid;
-  place-items: center;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  border: 1px solid rgba(245, 240, 232, .2);
-  background: rgba(20, 16, 14, .55);
-  backdrop-filter: blur(6px);
-  color: var(--text-cream);
-  font-size: 1.25rem;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 20;
-  transition: background .3s var(--ease-out), border-color .3s var(--ease-out), opacity .3s var(--ease-out);
-}
-
-.experts-prev { left: .5rem; }
-.experts-next { right: .5rem; }
-
-.experts-arrow:hover { background: rgba(246, 90, 38, .85); border-color: rgba(246, 90, 38, .85); }
-
-.experts-arrow:disabled { opacity: .25; cursor: default; pointer-events: none; }
+/* ── Arrows removed — swipe/drag is used instead ──────────────── */
+.experts-arrow { display: none; }
 
 /* ── Responsive: change how many cards show at once ───────────── */
 @media (max-width: 1050px) {
