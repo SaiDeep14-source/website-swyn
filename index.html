@@ -660,101 +660,19 @@
   }
 
   /* --- Experts carousel (inject before observing) -------------------- */
-   <div class="experts-slider">
-        <button class="experts-arrow experts-prev" aria-label="Previous experts">❮</button>
-  
-        <div class="experts__viewport">
-          <div class="experts__grid">
-  
-            <article class="expert-card" data-index="01">
-              <img class="expert-card__portrait" src="./experts/rajnish-virmani.png" alt="Rajnish Virmani" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CEO</p>
-              <h3 class="expert-card__name">Rajnish Virmani</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>Zoom · Reliance BPO</p></div>
-            </article>
-            
-             <article class="expert-card" data-index="02">
-              <img class="expert-card__portrait" src="./experts/rohith-ghosh.png" alt="Rohith Ghosh" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CEO</p>
-              <h3 class="expert-card__name">Rohith Ghosh</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>WNS · HDFC Credila · NIIT</p></div>
-            </article>
-  
-            <article class="expert-card" data-index="03">
-              <img class="expert-card__portrait" src="./experts/gauri k.png" alt="Gauri Chandra" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CEO</p>
-              <h3 class="expert-card__name">Gauri Chandra</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>J.P. Morgan · American Express</p></div>
-            </article>
-            
-   
-            <article class="expert-card" data-index="04">
-              <img class="expert-card__portrait" src="./experts/ashish-anand.png" alt="Ashish Anand" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CMO</p>
-              <h3 class="expert-card__name">Ashish Anand</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>CK Birla Group · OYO</p></div>
-            </article>
-           
-  
-            <article class="expert-card" data-index="05">
-              <img class="expert-card__portrait" src="./experts/sandeep suri.png" alt="Sandeep Suri" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CEO</p>
-              <h3 class="expert-card__name">Sandeep Suri</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>Fidelity Investments · MyDigitalCube</p></div>
-            </article>
-  
-            <article class="expert-card" data-index="06">
-              <img class="expert-card__portrait" src="./experts/lalit vij.png" alt="Lalit Vij" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional COO</p>
-              <h3 class="expert-card__name">Lalit Vij</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>Finlabs · Luthra and Luthra Law Offices</p></div>
-            </article>
-            
-            <article class="expert-card" data-index="07">
-              <img class="expert-card__portrait" src="./experts/sahil bhusan.png" alt="Sahil Bhushan" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CMO</p>
-              <h3 class="expert-card__name">Sahil Bhushan</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>McCann · HCL Tech · TO THE NEW</p></div>
-            </article>
-  
-            <article class="expert-card" data-index="08">
-              <img class="expert-card__portrait" src="./experts/vijay b.png" alt="Vijay Balakrishnan" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CGO</p>
-              <h3 class="expert-card__name">Vijay Balakrishnan</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>Tata Consumer Products · Airtel</p></div>
-            </article>
-  
-           
-  
-            <article class="expert-card" data-index="09">
-              <img class="expert-card__portrait" src="./experts/shrikanth-s.png" alt="Shrikanth S" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CMO</p>
-              <h3 class="expert-card__name">Shrikanth S</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>Amazon · CRED</p></div>
-            </article>
-            
-             <article class="expert-card" data-index="10">
-              <img class="expert-card__portrait" src="./experts/manmohan.png" alt="Manmohan Malik" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CHRO</p>
-              <h3 class="expert-card__name">Manmohan Malik</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>American Express · ORIX</p></div>
-            </article>
-
-            <article class="expert-card" data-index="11">
-              <img class="expert-card__portrait" src="./experts/rohith jain.png" alt="Rohit Jain" loading="lazy" decoding="async" />
-              <p class="expert-card__role">Fractional CPO</p>
-              <h3 class="expert-card__name">Rohit Jain</h3>
-              <div class="expert-card__history"><span>Formerly</span><p>Wipro · Iksula · Kalé</p></div>
-            </article>
-  
-          </div>
-        </div>
-  
-        <button class="experts-arrow experts-next" aria-label="Next experts">❯</button>
-      </div>
-    </div>
-  </section>
-
+  var experts = [
+    { name: 'Rajnish Virmani', role: 'Fractional CEO', formerly: 'Zoom \u00b7 Reliance BPO', img: 'https://swynconsulting.com/assets/rajnish-virmani-WznTQNvo.png' },
+    { name: 'Rohith Ghosh', role: 'Fractional CEO', formerly: 'WNS \u00b7 HDFC Credila \u00b7 NIIT', img: 'https://swynconsulting.com/assets/rohith-ghosh-Cm9W3ZPw.png' },
+    { name: 'Gauri Chandra', role: 'Fractional CEO', formerly: 'J.P. Morgan \u00b7 American Express', img: 'https://swynconsulting.com/assets/gauri%20k-BbGYdC2Z.png' },
+    { name: 'Ashish Anand', role: 'Fractional CMO', formerly: 'CK Birla Group \u00b7 OYO', img: 'https://swynconsulting.com/assets/ashish-anand-CU8R2I1A.png' },
+    { name: 'Sandeep Suri', role: 'Fractional CEO', formerly: 'Fidelity Investments \u00b7 MyDigitalCube', img: 'https://swynconsulting.com/assets/sandeep%20suri-DLGI6J5i.png' },
+    { name: 'Lalit Vij', role: 'Fractional COO', formerly: 'Finlabs \u00b7 Luthra and Luthra Law Offices', img: 'https://swynconsulting.com/assets/lalit%20vij-euojII8v.png' },
+    { name: 'Sahil Bhushan', role: 'Fractional CMO', formerly: 'McCann \u00b7 HCL Tech \u00b7 TO THE NEW', img: 'https://swynconsulting.com/assets/sahil%20bhusan-C2mBWXRN.png' },
+    { name: 'Vijay Balakrishnan', role: 'Fractional CGO', formerly: 'Tata Consumer Products \u00b7 Airtel', img: 'https://swynconsulting.com/assets/vijay%20b-CIngiiyp.png' },
+    { name: 'Shrikanth S', role: 'Fractional CMO', formerly: 'Amazon \u00b7 CRED', img: 'https://swynconsulting.com/assets/shrikanth-s-DEkI3hA9.png' },
+    { name: 'Manmohan Malik', role: 'Fractional CHRO', formerly: 'American Express \u00b7 ORIX', img: 'https://swynconsulting.com/assets/manmohan-DcFtgnOk.png' },
+    { name: 'Rohit Jain', role: 'Fractional CPO', formerly: 'Wipro \u00b7 Iksula \u00b7 Kal\u00e9', img: 'https://swynconsulting.com/assets/rohith%20jain-CNuv2_yB.png' }
+  ];
 
   var track = document.getElementById('experts-track');
   if (track) {
