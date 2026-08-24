@@ -6,11 +6,6 @@
 <title>SWYN Expert Mentor Registration</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 
-<!-- 
-  ==========================================================================
-  NEW LAYOUT CSS (Surrounding Design)
-  ==========================================================================
--->
 <style>
   body { 
     margin: 0; padding: 0; background: #fffcf8; 
@@ -40,7 +35,7 @@
   }
 
 .custom-nav {
-    position: absolute; /* Pins the bar to the top */
+    position: absolute;
     top: 0; 
     left: 0; 
     width: 100%;
@@ -48,7 +43,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100; /* Ensures it stays above the hero and form sides */
+    z-index: 100;
     box-sizing: border-box; 
   }
 
@@ -59,7 +54,7 @@
   }
 
   .logo-text-orange {
-    color: #d4621a; /* Matches the SWYN orange brand color */
+    color: #d4621a;
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 700;
@@ -121,14 +116,12 @@
     border-radius: 50%;
   }
 
-  /* Form Container Adjustments to fit the layout */
   .form-side .wrapper {
     margin: 0;
     width: 100%;
     max-width: 720px;
     padding: 0;
   }
-  /* The "Dark Header" style from the screenshot */
   .form-side .card::before {
     content: "Expert application: Tell us who you are, what you have built, and where you are most valuable.";
     display: block;
@@ -144,7 +137,7 @@
     line-height: 1.3;
   }
   .form-side .card { overflow: hidden; position: relative; }
-  .form-side . { display: none; } /* Hide internal logo in split screen */
+  .form-side . { display: none; }
 
   @media (max-width: 1100px) {
     .page-container { flex-direction: column; }
@@ -155,11 +148,6 @@
   }
 </style>
 
-<!-- 
-  ==========================================================================
-  START OF ORIGINAL FORM STYLE (UNTOUCHED)
-  ==========================================================================
--->
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -172,37 +160,30 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--text);min-height:100vh;padding:0}
 .wrapper{max-width:700px;margin:0 auto}
 
-/* Logo */
 .logo{display:flex;align-items:center;gap:10px;margin-bottom:28px}
 .logo-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);letter-spacing:.04em}
 
-/* Progress */
 .progress-wrap{margin-bottom:10px}
 .progress-bar{height:5px;background:var(--orange-muted);border-radius:3px;overflow:hidden}
 .progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--orange-light));border-radius:3px;transition:width .5s cubic-bezier(.4,0,.2,1)}
 .progress-label{font-size:11px;color:var(--muted);text-align:right;margin-top:6px;font-weight:500;letter-spacing:.04em}
 
-/* Card */
 .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:32px 34px;box-shadow:var(--shadow);transition:box-shadow .3s}
 .step-label{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
 .card-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.2}
 .card-subtitle{font-size:14px;color:var(--muted);margin-bottom:24px;line-height:1.65}
 hr.divider{border:none;border-top:1px solid var(--border);margin-bottom:24px}
 
-/* Section heads */
 .section-head{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin:28px 0 18px;display:flex;align-items:center;gap:12px}
 .section-head::before,.section-head::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* Form grid */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px}
 .form-grid .full{grid-column:1/-1}
 
-/* Fields */
 .field{display:flex;flex-direction:column;gap:5px}
 label{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
 label .req{color:var(--orange);margin-left:2px}
 
-/* Inputs */
 input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
   background:var(--input-bg);border:1.5px solid var(--border);border-radius:var(--radius);
   padding:11px 14px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);
@@ -217,25 +198,21 @@ input:focus,select:focus,textarea:focus{
 input.valid{border-color:#7cb87f}
 textarea{resize:vertical;min-height:110px;line-height:1.6}
 
-/* Select */
 .select-wrap{position:relative}
 .select-wrap::after{content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:13px;pointer-events:none}
 .select-wrap select{padding-right:36px;cursor:pointer}
 
-/* Hint & error */
 .hint{font-size:12px;color:var(--muted);line-height:1.5}
 .err-msg{color:var(--error);font-size:12px;display:flex;align-items:center;gap:4px;animation:errIn .18s ease}
 .err-msg::before{content:'⚠';font-size:11px}
 @keyframes errIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
-/* Other boxes */
 .other-box{display:none;flex-direction:column;gap:6px}
 .other-box.visible{display:flex!important}
 .other-box input,.other-box input:focus{border-color:var(--orange);background:#fff8f4}
 #expertiseOtherBox{flex-direction:column;gap:8px;margin-top:8px}
 #expertiseOtherBox input{border-color:var(--orange);background:#fff8f4}
 
-/* Pills */
 .pill-grid{display:flex;flex-wrap:wrap;gap:8px}
 .pill{
   display:inline-flex;align-items:center;gap:6px;padding:8px 15px;
@@ -247,7 +224,6 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 .pill input[type=radio],.pill input[type=checkbox]{accent-color:var(--orange);width:13px;height:13px;flex-shrink:0}
 .pill.selected{border-color:var(--orange);background:var(--orange-muted);color:var(--orange);font-weight:600}
 
-/* Upload */
 .upload-box{border:2px dashed var(--border);border-radius:12px;padding:26px 20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--input-bg)}
 .upload-box:hover{border-color:var(--orange);background:#fdf6f1}
 .upload-box .upload-icon{font-size:30px;margin-bottom:8px}
@@ -256,14 +232,12 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 .upload-box input[type=file]{display:none}
 .upload-done{border-color:var(--orange);background:#fff8f4}
 
-/* Rating */
 .rating-group{display:flex;gap:6px}
 .rating-btn{flex:1;padding:10px 4px;border:1.5px solid var(--border);border-radius:var(--radius);background:var(--input-bg);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;text-align:center;transition:all .15s}
 .rating-btn:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-1px)}
 .rating-btn.active{background:var(--orange);border-color:var(--orange);color:#fff;transform:translateY(-1px)}
 .rating-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px}
 
-/* Actions */
 .actions{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:18px;border-top:1px solid var(--border)}
 .btn-back{background:transparent;border:1.5px solid var(--border);color:var(--muted);border-radius:var(--radius);padding:11px 22px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;transition:all .18s}
 .btn-back:hover{border-color:var(--orange);color:var(--orange)}
@@ -273,35 +247,46 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
 .btn-next:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
 .btn-next.loading{opacity:.75;cursor:not-allowed;pointer-events:none}
 
-/* Step dots */
 .step-dots{display:flex;gap:7px;align-items:center}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--orange-muted);transition:all .35s cubic-bezier(.4,0,.2,1)}
 .dot.done{background:rgba(212,98,26,.4)}
 .dot.active{background:var(--orange);width:24px;border-radius:4px}
 
-/* Step transitions */
 .step{display:none;animation:stepIn .3s ease}
 .step.active{display:block}
 @keyframes stepIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-/* Success */
 .success{text-align:center;padding:56px 20px;animation:stepIn .4s ease}
 .success-icon{width:76px;height:76px;background:linear-gradient(135deg,var(--orange-muted),#ffe0c8);border-radius:50%;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:34px;box-shadow:0 4px 20px rgba(212,98,26,.2)}
 .success h2{font-family:'Playfair Display',serif;font-size:26px;margin-bottom:10px;color:var(--text)}
 .success p{color:var(--muted);font-size:15px;line-height:1.65}
 
-/* Terms */
+.whatsapp-box{
+  margin:28px auto 0;max-width:420px;background:#fff;border:1.5px solid var(--border);
+  border-radius:14px;padding:20px 22px;display:flex;align-items:center;gap:14px;text-align:left;
+}
+.whatsapp-icon{
+  width:44px;height:44px;flex-shrink:0;border-radius:50%;background:#e9fbe9;
+  display:flex;align-items:center;justify-content:center;font-size:22px;
+}
+.whatsapp-text{flex:1}
+.whatsapp-text p{margin:0 0 2px;font-size:14px;font-weight:600;color:var(--text)}
+.whatsapp-text span{font-size:12px;color:var(--muted)}
+.whatsapp-btn{
+  display:inline-block;background:#25D366;color:#fff;text-decoration:none;font-weight:600;
+  font-size:13px;padding:9px 16px;border-radius:8px;white-space:nowrap;transition:background .18s;
+}
+.whatsapp-btn:hover{background:#1ebe5a}
+
 .terms-box{background:var(--input-bg);border:1.5px solid var(--border);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:12px;cursor:pointer;transition:border-color .18s}
 .terms-box:hover{border-color:var(--orange)}
 .terms-box input[type=checkbox]{accent-color:var(--orange);width:16px;height:16px;flex-shrink:0;margin-top:3px;cursor:pointer}
 .terms-box p{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* Add button micro-style */
 .add-btn{padding:10px 18px;background:var(--orange);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;white-space:nowrap;transition:all .15s;box-shadow:0 1px 4px rgba(212,98,26,.2)}
 .add-btn:hover{background:var(--orange-light);transform:translateY(-1px)}
 .add-btn:active{transform:translateY(0)}
 
-/* Char counter */
 .char-count{font-size:11px;color:var(--muted);text-align:right;transition:color .2s}
 .char-count.warn{color:#e67e22}
 .char-count.over{color:var(--error)}
@@ -315,33 +300,26 @@ textarea{resize:vertical;min-height:110px;line-height:1.6}
   .rating-btn{padding:8px 2px;font-size:12px}
   .card-title{font-size:24px}
   .btn-next,.btn-back{padding:11px 18px;font-size:13px}
+  .whatsapp-box{flex-direction:column;text-align:center}
 }
 </style>
 
 <script>
-// Defined early so inline onchange/onkeydown attributes can call these before body scripts load
 function allowPhoneKeys(e) {
-  // Allow: backspace, delete, tab, escape, enter, arrows, home, end
   if ([8,9,13,27,46,35,36,37,38,39,40].indexOf(e.keyCode) !== -1) return true;
-  // Allow: + only at start (position 0)
   if (e.key === '+') {
     var inp = e.target;
     if (inp.selectionStart === 0 && inp.value.indexOf('+') === -1) return true;
     e.preventDefault(); return false;
   }
-  // Allow: spaces and hyphens for formatting
   if (e.key === ' ' || e.key === '-') return true;
-  // Allow: numbers 0-9
   if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) return true;
-  // Block everything else
   e.preventDefault(); return false;
 }
 
 function validatePhone(inp) {
-  // Remove everything except +, digits, spaces, hyphens
   var val = inp.value.replace(/[^\d\+\s\-]/g, '');
   inp.value = val;
-  // Count digits only
   var digits = val.replace(/\D/g,'');
   var wrap = inp.closest('.field');
   var err = wrap && wrap.querySelector('.phone-err');
@@ -460,7 +438,6 @@ function selectRating(fieldId, groupId, val) {
 
 <div class="page-container">
 
-  <!-- Left Side: Hero Content -->
   <div class="hero-side">
     <div class="badge">For Senior Leaders</div>
     <h1 class="hero-title">Join the bench<br>on your terms.</h1>
@@ -473,11 +450,9 @@ function selectRating(fieldId, groupId, val) {
     </ul>
   </div>
 
-  <!-- Right Side: The Form -->
   <div class="form-side">
     <div class="wrapper">
       <div class="card">
-    <!-- ═══ STEP 1: Personal Details ═══ -->
     <div class="step active" id="step1">
       <div class="step-label">Step 01 of 05</div>
       <h1 class="card-title">Personal Details</h1>
@@ -554,7 +529,6 @@ function selectRating(fieldId, groupId, val) {
       </div>
     </div>
 
-    <!-- ═══ STEP 2: Professional Background ═══ -->
     <div class="step" id="step2">
       <div class="step-label">Step 02 of 05</div>
       <h1 class="card-title">Professional Background</h1>
@@ -626,7 +600,6 @@ function selectRating(fieldId, groupId, val) {
           </div>
         </div>
 
-        <!-- TYPES OF ENGAGEMENT section -->
         <div class="full" style="margin-top:8px;">
           <div class="section-head">Engagements</div>
         </div>
@@ -682,7 +655,6 @@ function selectRating(fieldId, groupId, val) {
       </div>
     </div>
 
-    <!-- ═══ STEP 3: Availability & Engagement ═══ -->
     <div class="step" id="step3">
       <div class="step-label">Step 03 of 05</div>
       <h1 class="card-title">Availability &amp; Engagement</h1>
@@ -764,7 +736,6 @@ function selectRating(fieldId, groupId, val) {
       </div>
     </div>
 
-    <!-- ═══ STEP 4: Online Presence & Files ═══ -->
     <div class="step" id="step4">
       <div class="step-label">Step 04 of 05</div>
       <h1 class="card-title">Online Presence</h1>
@@ -816,7 +787,6 @@ function selectRating(fieldId, groupId, val) {
       </div>
     </div>
 
-    <!-- ═══ STEP 5: Final ═══ -->
     <div class="step" id="step5">
       <div class="step-label">Step 05 of 05</div>
       <h1 class="card-title">Final Details</h1>
@@ -840,7 +810,6 @@ function selectRating(fieldId, groupId, val) {
 
       </div>
 
-      <!-- Website listing consent -->
       <div style="margin-top:28px;">
         <div class="section-head" style="margin-top:0;margin-bottom:20px;">Profile Listing</div>
         <div class="field full">
@@ -855,7 +824,6 @@ function selectRating(fieldId, groupId, val) {
         </div>
       </div>
 
-      <!-- Terms -->
       <div style="margin-top:28px;">
         <label class="terms-box">
           <input type="checkbox" id="termsCheck"/>
@@ -869,12 +837,21 @@ function selectRating(fieldId, groupId, val) {
       </div>
     </div>
 
-    <!-- SUCCESS -->
     <div class="step" id="stepSuccess">
       <div class="success">
         <div class="success-icon">&#10003;</div>
         <h2>Application Submitted!</h2>
         <p>Thank you for applying to join SWYN's expert mentor network.<br/></p>
+
+        <div class="whatsapp-box">
+          <div class="whatsapp-icon">💬</div>
+          <div class="whatsapp-text">
+            <p>Stay in the loop</p>
+            <span>Join our WhatsApp channel for updates and new mandates.</span>
+          </div>
+          <a href="https://whatsapp.com/channel/0029Vb7i5L7AojYt7PQDJn0G" target="_blank" class="whatsapp-btn">Join channel</a>
+        </div>
+
         <p style="margin-top:20px;font-size:13px;color:var(--muted);">Questions? Write to us at<a href="mailto:info@swyn.in" style="color:var(--orange);">info@swyn.in</a></p>
       </div>
     </div>
@@ -886,17 +863,14 @@ function selectRating(fieldId, groupId, val) {
 
 <script>
 
-// ── Global Variables ──
 var current = 1; 
 var totalSteps = 5;
 
-// Object to store file data locally (Base64)
 var uploadedFileData = {
   cv: null,
   photo: null
 };
 
-// ── UI Logic (Preserved) ──
 function showStep(n) {
   document.querySelectorAll('.step').forEach(function(s){s.classList.remove('active');});
   var t = n==='success' ? document.getElementById('stepSuccess') : document.getElementById('step'+n);
@@ -979,7 +953,6 @@ function executiveRoleOtherSelected() {
   return !!document.querySelector('#executiveRoleGrid input[value="Other"]:checked');
 }
 
-// ── NEW: File Upload via Base64 (No Google Login Required) ──
 function driveUpload(type) {
   var config = {
     cv: { labelId: 'cvLabel', boxId: 'cvUploadBox', accept: '.pdf,.doc,.docx' },
@@ -1002,13 +975,11 @@ function driveUpload(type) {
     
     var reader = new FileReader();
     reader.onload = function(evt) {
-      // Store file data for later submission
       uploadedFileData[type] = {
         base64: evt.target.result,
         name: file.name
       };
       
-      // Update UI
       label.textContent = "✓ " + file.name;
       box.classList.add('upload-done');
       box.style.borderColor = 'var(--orange)';
@@ -1028,7 +999,6 @@ function driveUpload(type) {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Keyboard Navigation (Preserved)
   document.addEventListener('keydown', function(e) {
     if (e.key !== 'Enter' && e.keyCode !== 13) return;
     var active = document.activeElement;
@@ -1058,7 +1028,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btn) btn.click();
   });
 
-  // Live Feedback (Preserved)
   document.querySelectorAll('input,select,textarea').forEach(function(el) {
     el.addEventListener('input', function(){
         el.style.borderColor = ''; el.style.background = '';
@@ -1079,7 +1048,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Pill Logic (Preserved)
   document.querySelectorAll('.pill input').forEach(function(inp) {
     inp.addEventListener('change', function() {
       if (inp.type === 'radio') {
@@ -1102,7 +1070,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   document.getElementById('executiveRoleOther').addEventListener('input', updateExecutiveRoleValue);
 
-  // Navigation & Validation (Steps 1-3 Preserved)
   document.getElementById('next1').addEventListener('click', function() {
     var checks = [{id:'firstName',msg:'Required'},{id:'lastName',msg:'Required'},{id:'primaryEmail',msg:'Required'},{id:'phoneNumber',msg:'Required'},{id:'city',msg:'Required'},{id:'headline',msg:'Required'}];
     if (getVal('city')==='Other') checks.push({id:'cityOther',msg:'Required'});
@@ -1127,11 +1094,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (validate(checks)) { current=4; showStep(4); } else { scrollToFirstError(); }
   });
 
-  // STEP 4 VALIDATION (Updated for new file method)
   document.getElementById('back4').addEventListener('click', function(){ current=3; showStep(3); });
   document.getElementById('next4').addEventListener('click', function() {
     var ok = validate([{id:'linkedinProfile',msg:'Required'}]);
-    // Check if CV file exists in our local storage object
     if (!uploadedFileData.cv) {
       var box = document.getElementById('cvUploadBox');
       box.style.borderColor = '#c0392b'; box.style.background = '#fff5f5';
@@ -1145,7 +1110,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (ok) { current=5; showStep(5); } else { scrollToFirstError(); }
   });
 
-  // FINAL SUBMISSION (Updated to send Base64 files)
   document.getElementById('back5').addEventListener('click', function(){ current=4; showStep(4); });
   document.getElementById('btnSubmit').addEventListener('click', function() {
     var checks = [{id:'topAchievements', msg:'Required'}];
@@ -1156,7 +1120,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!ok) { scrollToFirstError(); return; }
 
-    // Aggregate all data
     var data = {
       'First name': getVal('firstName'),
       'Last name': getVal('lastName'),
@@ -1170,7 +1133,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'Current Company / Organization': getVal('currentCompany'),
       'Total Years of Professional Experience': getVal('yearsExperience'),
       'Primary Industry of Expertise': getVal('primaryIndustry') === 'Other' ? getVal('industryOther') : getVal('primaryIndustry'),
-      'Which CXO or executive leadership role best describes your primary expertise?': updateExecutiveRoleValue(),
+      'Which CXO or executive leadership roles best describe your primary expertise?': updateExecutiveRoleValue(),
       'Please provide a brief biography / professional summary': getVal('biography'),
       'Types of engagements you\'re open to': getPillValues('engagementTypeGrid'),
       'Specific Areas of Expertise for Mentorship': getVal('areasOfExpertiseHidden'),
@@ -1188,7 +1151,6 @@ document.addEventListener('DOMContentLoaded', function() {
       'Anything else you\'d like SWYN to know?': getVal('additionalInfo'),
       'Submitted At': new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
 
-      // File objects for backend processing
       'cvFile': uploadedFileData.cv,
       'photoFile': uploadedFileData.photo
     };
