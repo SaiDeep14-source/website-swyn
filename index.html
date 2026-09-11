@@ -110,6 +110,7 @@
       *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
     }
   </style>
+  <link rel="stylesheet" href="./experts.css" />
 </head>
 <body class="font-sans">
 
@@ -129,7 +130,7 @@
     <!-- Navbar (frosted white glass) -->
     <nav class="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-2 text-[#1a1511]">
-        <img src="https://swynconsulting.com/assets/reallogo-B6vnAoKs.png" alt="SWYN logo" class="h-7 w-auto" />
+        <img src="./reallogo.png" alt="SWYN logo" class="h-7 w-auto" />
         <span class="text-2xl font-semibold tracking-tight">SWYN</span>
       </a>
 
@@ -236,7 +237,105 @@
 </section>
 
 <!-- ============================================================ -->
-<!-- OUR EXPERTS -->
+<section class="experts" id="experts-root" aria-labelledby="experts-title">
+    <div class="experts__inner">
+      <header class="experts__header">
+        <span class="experts__eyebrow">Our experts</span>
+        <h2 class="experts__title" id="experts-title">The minds,<br>by name.</h2>
+        <p class="experts__intro">Senior operators who have already led at the scale you are building toward—available for focused, hands-on mandates.</p>
+      </header>
+  
+      <div class="experts-slider">
+        <button class="experts-arrow experts-prev" aria-label="Previous experts">&#10094;</button>
+  
+        <div class="experts__viewport">
+          <div class="experts__grid">
+  
+            <article class="expert-card" data-index="01">
+              <img class="expert-card__portrait" src="./experts/rajnish-virmani.png" alt="Rajnish Virmani" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CEO</p>
+              <h3 class="expert-card__name">Rajnish Virmani</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>Zoom · Reliance BPO</p></div>
+            </article>
+            
+            <article class="expert-card" data-index="02">
+              <img class="expert-card__portrait" src="./experts/rohith-ghosh.png" alt="Rohith Ghosh" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CEO</p>
+              <h3 class="expert-card__name">Rohith Ghosh</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>WNS · HDFC Credila · NIIT</p></div>
+            </article>
+  
+            <article class="expert-card" data-index="03">
+              <img class="expert-card__portrait" src="./experts/gauri k.png" alt="Gauri Chandra" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CEO</p>
+              <h3 class="expert-card__name">Gauri Chandra</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>J.P. Morgan · American Express</p></div>
+            </article>
+  
+            <article class="expert-card" data-index="04">
+              <img class="expert-card__portrait" src="./experts/ashish-anand.png" alt="Ashish Anand" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CMO</p>
+              <h3 class="expert-card__name">Ashish Anand</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>CK Birla Group · OYO</p></div>
+            </article>
+  
+            <article class="expert-card" data-index="05">
+              <img class="expert-card__portrait" src="./experts/sandeep suri.png" alt="Sandeep Suri" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CEO</p>
+              <h3 class="expert-card__name">Sandeep Suri</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>Fidelity Investments · MyDigitalCube</p></div>
+            </article>
+  
+            <article class="expert-card" data-index="06">
+              <img class="expert-card__portrait" src="./experts/lalit vij.png" alt="Lalit Vij" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional COO</p>
+              <h3 class="expert-card__name">Lalit Vij</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>Finlabs · Luthra and Luthra Law Offices</p></div>
+            </article>
+            
+            <article class="expert-card" data-index="07">
+              <img class="expert-card__portrait" src="./experts/sahil bhusan.png" alt="Sahil Bhushan" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CMO</p>
+              <h3 class="expert-card__name">Sahil Bhushan</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>McCann · HCL Tech · TO THE NEW</p></div>
+            </article>
+  
+            <article class="expert-card" data-index="08">
+              <img class="expert-card__portrait" src="./experts/vijay b.png" alt="Vijay Balakrishnan" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CGO</p>
+              <h3 class="expert-card__name">Vijay Balakrishnan</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>Tata Consumer Products · Airtel</p></div>
+            </article>
+  
+            <article class="expert-card" data-index="09">
+              <img class="expert-card__portrait" src="./experts/shrikanth-s.png" alt="Shrikanth S" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CMO</p>
+              <h3 class="expert-card__name">Shrikanth S</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>Amazon · CRED</p></div>
+            </article>
+            
+            <article class="expert-card" data-index="10">
+              <img class="expert-card__portrait" src="./experts/manmohan.png" alt="Manmohan Malik" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CHRO</p>
+              <h3 class="expert-card__name">Manmohan Malik</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>American Express · ORIX</p></div>
+            </article>
+
+            <article class="expert-card" data-index="11">
+              <img class="expert-card__portrait" src="./experts/rohith jain.png" alt="Rohit Jain" loading="lazy" decoding="async" />
+              <p class="expert-card__role">Fractional CPO</p>
+              <h3 class="expert-card__name">Rohit Jain</h3>
+              <div class="expert-card__history"><span>Formerly</span><p>Wipro · Iksula · Kalé</p></div>
+            </article>
+  
+          </div>
+        </div>
+  
+        <button class="experts-arrow experts-next" aria-label="Next experts">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
 <!-- ============================================================ -->
 <section id="experts" class="bg-[#faf4ef] py-20 sm:py-28 overflow-hidden">
   <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
@@ -429,7 +528,7 @@
     <div class="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-14 items-center">
       <div data-fade="up" data-delay="0" class="lg:col-span-2">
         <div class="liquid-glass rounded-xl overflow-hidden">
-          <img src="https://swynconsulting.com/assets/shaamlie-hero-B8kpmMG1.jpg" alt="Shaamlie Anggane, Founder and CEO of SWYN" class="w-full h-full object-cover" loading="lazy" />
+          <img src="./shaamlie-hero.jpg" alt="Shaamlie Anggane, Founder and CEO of SWYN" class="w-full h-full object-cover" loading="lazy" />
         </div>
       </div>
       <div data-fade="up" data-delay="150" class="lg:col-span-3">
@@ -476,7 +575,7 @@
     <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
       <div class="md:col-span-2">
         <a href="#top" class="flex items-center gap-2 text-[#1a1511]">
-          <img src="https://swynconsulting.com/assets/reallogo-B6vnAoKs.png" alt="SWYN logo" class="h-8 w-auto" />
+          <img src="./reallogo.png" alt="SWYN logo" class="h-8 w-auto" />
           <span class="text-xl font-semibold tracking-tight">SWYN</span>
         </a>
         <p class="mt-4 text-sm text-[#8d847b] leading-relaxed max-w-xs">Deploy the minds that built the giants.</p>
@@ -659,42 +758,7 @@
     wordEls.forEach(function (i) { io.observe(i.el); });
   }
 
-  /* --- Experts carousel (inject before observing) -------------------- */
-  var experts = [
-    { name: 'Rajnish Virmani', role: 'Fractional CEO', formerly: 'Zoom \u00b7 Reliance BPO', img: './experts/rajnish-virmani.png' },
-    { name: 'Rohith Ghosh', role: 'Fractional CEO', formerly: 'WNS \u00b7 HDFC Credila \u00b7 NIIT', img: './experts/rohith-ghosh.png' },
-    { name: 'Gauri Chandra', role: 'Fractional CEO', formerly: 'J.P. Morgan \u00b7 American Express', img: './experts/gauri k.png' },
-    { name: 'Ashish Anand', role: 'Fractional CMO', formerly: 'CK Birla Group \u00b7 OYO', img: './experts/ashish-anand.png' },
-    { name: 'Sandeep Suri', role: 'Fractional CEO', formerly: 'Fidelity Investments \u00b7 MyDigitalCube', img: './experts/sandeep suri.png' },
-    { name: 'Lalit Vij', role: 'Fractional COO', formerly: 'Finlabs \u00b7 Luthra and Luthra Law Offices', img: './experts/lalit vij.png' },
-    { name: 'Sahil Bhushan', role: 'Fractional CMO', formerly: 'McCann \u00b7 HCL Tech \u00b7 TO THE NEW', img: './experts/sahil bhusan.png' },
-    { name: 'Vijay Balakrishnan', role: 'Fractional CGO', formerly: 'Tata Consumer Products \u00b7 Airtel', img: './experts/vijay b.png' },
-    { name: 'Shrikanth S', role: 'Fractional CMO', formerly: 'Amazon \u00b7 CRED', img: './experts/shrikanth-s.png' },
-    { name: 'Manmohan Malik', role: 'Fractional CHRO', formerly: 'American Express \u00b7 ORIX', img: './experts/manmohan.png' },
-    { name: 'Rohit Jain', role: 'Fractional CPO', formerly: 'Wipro \u00b7 Iksula \u00b7 Kal\u00e9', img: './experts/rohith jain.png' }
-  ];
-
-  var track = document.getElementById('experts-track');
-  if (track) {
-    experts.forEach(function (e, i) {
-      var card = document.createElement('div');
-      card.className = 'liquid-glass snap-start shrink-0 w-[260px] sm:w-[290px] rounded-xl overflow-hidden';
-      card.setAttribute('data-fade', 'up');
-      card.setAttribute('data-delay', String(Math.min(i, 4) * 90));
-      card.innerHTML =
-        '<div class="relative h-[300px] sm:h-[330px] bg-[#fff1ea]">' +
-          '<img src="' + e.img + '" alt="' + e.name + '" class="w-full h-full object-cover object-top" loading="lazy" />' +
-          '<span class="liquid-glass absolute top-4 left-4 text-xs font-medium text-[#1a1511] rounded-full px-3 py-1.5">' + e.role + '</span>' +
-        '</div>' +
-        '<div class="p-5">' +
-          '<h3 class="text-lg font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">' + e.name + '</h3>' +
-          '<p class="mt-1 text-[11px] font-medium tracking-[0.15em] uppercase text-[#f05a28]">Formerly</p>' +
-          '<p class="mt-0.5 text-sm text-[#5b554f]">' + e.formerly + '</p>' +
-        '</div>';
-      track.appendChild(card);
-    });
-
-    var prev = document.getElementById('carousel-prev');
+  var prev = document.getElementById('carousel-prev');
     var next = document.getElementById('carousel-next');
     var step = function () { return Math.min(track.clientWidth, 320); };
     if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
