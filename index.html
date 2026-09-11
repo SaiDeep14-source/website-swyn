@@ -3,241 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SWYN — Deploy the minds that built the giants.</title>
-  <meta name="description" content="Access India's most seasoned C-Suite leaders on a fractional, project-based model. Senior advisory. Full-scale consulting. One firm built for what's next." />
-
-  <!-- Fonts -->
+  <title>SWYN</title>
+  <meta name="description" content="" />
+  <link rel="icon" type="image/png" href="./reallogo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
-        }
-      }
-    };
-  </script>
-
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      background: #ffffff;
-      color: #1a1511;
-      font-family: 'Inter', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-behavior: smooth;
-    }
-
-    /* Liquid glass — light variant: frosted white with a top
-       highlight rim fading into a faint brand-orange rim below */
-    .liquid-glass {
-      background: rgba(255, 255, 255, 0.55);
-      background-blend-mode: luminosity;
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-      border: none;
-      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.6), 0 8px 24px rgba(26, 21, 17, 0.06);
-      position: relative;
-      overflow: hidden;
-    }
-    .liquid-glass::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      padding: 1.4px;
-      background: linear-gradient(180deg,
-        rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 20%,
-        rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
-        rgba(240,90,40,0.12) 80%, rgba(240,90,40,0.3) 100%);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-    }
-
-    /* Character stagger (headings) */
-    .char {
-      display: inline-block;
-      opacity: 0;
-      transform: translateX(-18px);
-      transition-property: opacity, transform;
-      transition-timing-function: ease;
-      transition-duration: 500ms;
-    }
-    .char.in { opacity: 1; transform: translateX(0); }
-
-    /* Word stagger (quote) */
-    .word {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(16px);
-      transition-property: opacity, transform;
-      transition-timing-function: ease;
-      transition-duration: 600ms;
-    }
-    .word.in { opacity: 1; transform: translateY(0); }
-
-    /* Fade utility (data-fade / data-fade="up") */
-    [data-fade] {
-      opacity: 0;
-      transition-property: opacity, transform;
-      transition-timing-function: ease;
-      transition-duration: 1000ms;
-    }
-    [data-fade="up"] { transform: translateY(20px); }
-    [data-fade].faded { opacity: 1; transform: translateY(0); }
-
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-    .drawer-ease { transition: transform .5s cubic-bezier(0.22, 1, 0.36, 1); }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .char, .word, [data-fade], [data-fade="up"] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./index.css" />
   <link rel="stylesheet" href="./experts.css" />
 </head>
-<body class="font-sans">
+<body>
 
-<!-- ============================================================ -->
-<!-- HERO -->
-<!-- ============================================================ -->
-<section id="top" class="relative w-full h-screen overflow-hidden bg-[#faf4ef]">
-
-  <!-- Raw background video, no overlay -->
-  <video
-    class="absolute inset-0 w-full h-full object-cover"
-    src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4"
-    autoplay loop muted playsinline preload="auto"></video>
-
-  <div class="relative z-10 flex flex-col h-full px-6 md:px-12 lg:px-16 pt-6">
-
-    <!-- Navbar (frosted white glass) -->
-    <nav class="liquid-glass rounded-xl px-4 py-2 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2 text-[#1a1511]">
-        <img src="./reallogo.png" alt="SWYN logo" class="h-7 w-auto" />
-        <span class="text-2xl font-semibold tracking-tight">SWYN</span>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 1 — NAVIGATION (sticky)
+       ═══════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <img src="./reallogo.png" alt="SWYN Logo" class="nav__logo-img" />
+        SWYN
       </a>
-
-      <div class="hidden md:flex items-center gap-8 text-sm text-[#1a1511]">
-        <a href="#what-we-do" class="hover:text-[#f05a28] transition-colors">How we work</a>
-        <a href="#disciplines-root" class="hover:text-[#f05a28] transition-colors">Our capabilities</a>
-        <a href="#process-root" class="hover:text-[#f05a28] transition-colors">How it works</a>
-        <a href="#about-us" class="hover:text-[#f05a28] transition-colors">About</a>
+      <div class="nav__links" id="navLinks">
+        <a href="#what-we-do" class="nav__link">How we work</a>
+        <a href="#disciplines-root" class="nav__link">Our capabilities</a>
+        <a href="#process-root" class="nav__link">How it works</a>
+        <a href="#about-us" class="nav__link">About</a>
       </div>
+      <a href="./client-brief.html" class="nav__cta">
+        <span>Find a CXO</span>
+        <span class="nav__cta-arrow" aria-hidden="true">→</span>
+      </a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="https://swynconsulting.com/client-brief.html" class="hidden sm:inline-block bg-[#f05a28] text-white px-6 py-2 rounded-lg text-sm font-medium hover:bg-[#d94a1a] transition-colors">Find a CXO &rarr;</a>
-        <button id="menu-btn" class="md:hidden relative flex items-center justify-center w-10 h-10 rounded-lg border border-[#1a1511]/15 text-[#1a1511] transition-colors hover:bg-white/60" aria-label="Open menu" aria-expanded="false">
-          <svg id="icon-menu" class="w-5 h-5 absolute transition-all duration-300 opacity-100 rotate-0 scale-100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-          <svg id="icon-x" class="w-5 h-5 absolute transition-all duration-300 opacity-0 -rotate-90 scale-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-        </button>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2 — HERO
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <img src="./hero-bg.png" alt="" class="hero__bg-img" />
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <span class="eyebrow">Fractional CXO &amp; Expert Advisory — India</span>
+      <h1 class="hero__headline">
+        Deploy the minds<br />that built the giants.
+      </h1>
+      <p class="hero__subline">
+        Access India’s most seasoned C-Suite leaders on a fractional, project-based model. Senior advisory. Full-scale consulting. One firm built for what's next.
+      </p>
+      <div class="hero__ctas">
+        <a href="./explore.html" class="btn btn--primary hero__btn hero__btn--primary">
+          <span>Tell us who do you need</span>
+          <span class="hero__btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="./expert-apply.html" class="btn btn--ghost hero__btn hero__btn--ghost">
+          <span>Apply as an expert</span>
+          <span class="hero__btn-arrow hero__btn-arrow--ghost" aria-hidden="true">→</span>
+        </a>
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <!-- Hero content pushed to bottom -->
-    <div class="flex-1 flex flex-col justify-end pb-12 lg:pb-16">
-      <div class="lg:grid lg:grid-cols-2 lg:items-end">
-
-        <!-- Left column -->
-        <div>
-          <h1 data-chars data-char-delay="30" data-char-duration="500" data-start-delay="200"
-              class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal mb-4 text-white"
-              style="letter-spacing: -0.04em;">Deploy the minds<br />that built the giants.</h1>
-          <p data-fade data-delay="800" data-duration="1000" class="text-base md:text-lg text-white/90 mb-5 max-w-xl">
-            Access India&rsquo;s most seasoned C-Suite leaders on a fractional, project-based model. Senior advisory. Full-scale consulting. One firm built for what&rsquo;s next.
-          </p>
-          <div data-fade data-delay="1200" data-duration="1000" class="flex flex-wrap gap-4">
-            <a href="https://swynconsulting.com/explore.html" class="bg-[#f05a28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#d94a1a] transition-colors">Tell us who you need &rarr;</a>
-            <a href="https://swynconsulting.com/expert-apply.html" class="liquid-glass border border-white/40 text-[#1a1511] px-8 py-3 rounded-lg font-medium hover:bg-[#f05a28] hover:text-white transition-colors duration-300">Apply as an expert</a>
-          </div>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 4 — THE PROBLEM
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="section section--white" id="what-we-do">
+    <div class="container">
+      <div class="section__header fade-in">
+        <span class="eyebrow eyebrow--dark">HOW WE WORK</span>
+        <h2 class="section__headline section__headline--dark">
+          The right person<br>for the problem.
+        </h2>
+      </div>
+      <div class="section__body fade-in">
+        <p class="section__text section__text--dark">
+          You tell us the problem. We find the right person — someone who's actually solved it before. They come into your business, get to work, and deliver. No delays, no fluff, just results.
+        </p>
+      </div>
+      <div class="stats fade-in">
+        <div class="stat">
+          <span class="stat__number">200+</span>
+          <span class="stat__label">operators, not advisors</span>
         </div>
-
-        <!-- Right column tag -->
-        <div data-fade data-delay="1400" data-duration="1000" class="mt-10 lg:mt-0 flex items-end justify-start lg:justify-end">
-          <div class="liquid-glass border border-white/40 px-6 py-3 rounded-xl">
-            <span class="text-lg md:text-xl lg:text-2xl font-light text-[#1a1511]">Fractional. Advisory. Consulting.</span>
-          </div>
+        <div class="stat">
+          <span class="stat__number">5</span>
+          <span class="stat__label">domains, end to end</span>
         </div>
-
+        <div class="stat">
+          <span class="stat__number">Weeks</span>
+          <span class="stat__label">not months — to deploy</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Mobile overlay -->
-<div id="mobile-overlay" class="md:hidden fixed inset-0 z-20 transition-opacity duration-300 opacity-0 pointer-events-none">
-  <div class="absolute inset-0 bg-[#1a1511]/30 backdrop-blur-sm"></div>
-</div>
 
-<!-- Mobile drawer -->
-<div id="mobile-drawer" class="md:hidden fixed top-0 right-0 bottom-0 z-30 w-[85%] max-w-sm bg-white/90 backdrop-blur-xl border-l border-[#1a1511]/10 drawer-ease translate-x-full">
-  <div class="flex flex-col h-full pt-24 px-8 pb-8 overflow-y-auto">
-    <button id="drawer-close" class="absolute top-6 right-6 flex items-center justify-center w-10 h-10 rounded-lg border border-[#1a1511]/15 text-[#1a1511] hover:bg-[#fff1ea] transition-colors" aria-label="Close menu">
-      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-    </button>
-    <div class="flex flex-col gap-1">
-      <a href="#what-we-do" data-drawer-link data-i="0" class="drawer-item text-2xl font-medium text-[#1a1511] py-4 border-b border-[#1a1511]/10 transition-all duration-500 translate-x-8 opacity-0">How we work</a>
-      <a href="#disciplines-root" data-drawer-link data-i="1" class="drawer-item text-2xl font-medium text-[#1a1511] py-4 border-b border-[#1a1511]/10 transition-all duration-500 translate-x-8 opacity-0">Our capabilities</a>
-      <a href="#process-root" data-drawer-link data-i="2" class="drawer-item text-2xl font-medium text-[#1a1511] py-4 border-b border-[#1a1511]/10 transition-all duration-500 translate-x-8 opacity-0">How it works</a>
-      <a href="#about-us" data-drawer-link data-i="3" class="drawer-item text-2xl font-medium text-[#1a1511] py-4 border-b border-[#1a1511]/10 transition-all duration-500 translate-x-8 opacity-0">About</a>
-    </div>
-    <div id="drawer-cta" class="mt-8 flex flex-col gap-4 transition-all duration-500 translate-x-8 opacity-0">
-      <a href="https://swynconsulting.com/explore.html" class="text-sm text-[#5b554f] hover:text-[#f05a28] transition-colors">Explore &rarr;</a>
-      <a href="https://swynconsulting.com/expert-apply.html" class="text-sm text-[#5b554f] hover:text-[#f05a28] transition-colors">Apply as an expert &rarr;</a>
-      <a href="https://swynconsulting.com/client-brief.html" class="mt-2 text-center bg-[#f05a28] text-white text-sm font-medium px-5 py-3 rounded-lg hover:bg-[#d94a1a] transition-colors">Find a CXO &rarr;</a>
-    </div>
-  </div>
-</div>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2 — DISCIPLINES ACCORDION (React)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="disciplines-root"></div>
 
-<!-- ============================================================ -->
-<!-- HOW WE WORK -->
-<!-- ============================================================ -->
-<section id="what-we-do" class="bg-white py-20 sm:py-28 px-6 md:px-12 lg:px-16">
-  <div class="max-w-6xl mx-auto text-center">
-    <p data-fade class="text-xs font-medium tracking-[0.25em] uppercase text-[#f05a28] mb-5">How we work</p>
-    <h2 data-chars data-char-delay="18" data-char-duration="400"
-        class="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1a1511]" style="letter-spacing: -0.04em;">
-      The right person <span class="text-[#f05a28]">for the problem.</span>
-    </h2>
-    <p data-fade="up" data-delay="200" class="mt-6 text-base md:text-lg text-[#5b554f] leading-relaxed max-w-xl mx-auto">
-      You tell us the problem. We find the right person — someone who&rsquo;s actually solved it before. They come into your business, get to work, and deliver. No delays, no fluff, just results.
-    </p>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 2.5 — BUILT IN THE BOARDROOMS OF
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="carousel-root"></div>
 
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-      <div data-fade="up" data-delay="0" class="liquid-glass rounded-xl px-6 py-8">
-        <p class="text-3xl md:text-4xl font-normal text-[#1a1511]" style="letter-spacing:-0.03em;">200+</p>
-        <p class="mt-2 text-sm text-[#5b554f]">Operators, not advisors</p>
-      </div>
-      <div data-fade="up" data-delay="120" class="liquid-glass rounded-xl px-6 py-8">
-        <p class="text-3xl md:text-4xl font-normal text-[#1a1511]" style="letter-spacing:-0.03em;">5 domains</p>
-        <p class="mt-2 text-sm text-[#5b554f]">End to end</p>
-      </div>
-      <div data-fade="up" data-delay="240" class="liquid-glass rounded-xl px-6 py-8">
-        <p class="text-3xl md:text-4xl font-normal text-[#1a1511]" style="letter-spacing:-0.03em;">Weeks</p>
-        <p class="mt-2 text-sm text-[#5b554f]">Not months — to deploy</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 3 — THE PROCESS (React Component)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="process-root"></div>
 
-<!-- ============================================================ -->
-<section class="experts" id="experts-root" aria-labelledby="experts-title">
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6 — OUR EXPERTS
+       ═══════════════════════════════════════════════════════════ -->
+  <section class="experts" id="experts-root" aria-labelledby="experts-title">
     <div class="experts__inner">
       <header class="experts__header">
         <span class="experts__eyebrow">Our experts</span>
@@ -246,7 +131,7 @@
       </header>
   
       <div class="experts-slider">
-        <button class="experts-arrow experts-prev" aria-label="Previous experts">&#10094;</button>
+        <button class="experts-arrow experts-prev" aria-label="Previous experts">❮</button>
   
         <div class="experts__viewport">
           <div class="experts__grid">
@@ -258,7 +143,7 @@
               <div class="expert-card__history"><span>Formerly</span><p>Zoom · Reliance BPO</p></div>
             </article>
             
-            <article class="expert-card" data-index="02">
+             <article class="expert-card" data-index="02">
               <img class="expert-card__portrait" src="./experts/rohith-ghosh.png" alt="Rohith Ghosh" loading="lazy" decoding="async" />
               <p class="expert-card__role">Fractional CEO</p>
               <h3 class="expert-card__name">Rohith Ghosh</h3>
@@ -271,13 +156,15 @@
               <h3 class="expert-card__name">Gauri Chandra</h3>
               <div class="expert-card__history"><span>Formerly</span><p>J.P. Morgan · American Express</p></div>
             </article>
-  
+            
+   
             <article class="expert-card" data-index="04">
               <img class="expert-card__portrait" src="./experts/ashish-anand.png" alt="Ashish Anand" loading="lazy" decoding="async" />
               <p class="expert-card__role">Fractional CMO</p>
               <h3 class="expert-card__name">Ashish Anand</h3>
               <div class="expert-card__history"><span>Formerly</span><p>CK Birla Group · OYO</p></div>
             </article>
+           
   
             <article class="expert-card" data-index="05">
               <img class="expert-card__portrait" src="./experts/sandeep suri.png" alt="Sandeep Suri" loading="lazy" decoding="async" />
@@ -307,6 +194,8 @@
               <div class="expert-card__history"><span>Formerly</span><p>Tata Consumer Products · Airtel</p></div>
             </article>
   
+           
+  
             <article class="expert-card" data-index="09">
               <img class="expert-card__portrait" src="./experts/shrikanth-s.png" alt="Shrikanth S" loading="lazy" decoding="async" />
               <p class="expert-card__role">Fractional CMO</p>
@@ -314,7 +203,7 @@
               <div class="expert-card__history"><span>Formerly</span><p>Amazon · CRED</p></div>
             </article>
             
-            <article class="expert-card" data-index="10">
+             <article class="expert-card" data-index="10">
               <img class="expert-card__portrait" src="./experts/manmohan.png" alt="Manmohan Malik" loading="lazy" decoding="async" />
               <p class="expert-card__role">Fractional CHRO</p>
               <h3 class="expert-card__name">Manmohan Malik</h3>
@@ -331,507 +220,135 @@
           </div>
         </div>
   
-        <button class="experts-arrow experts-next" aria-label="Next experts">&#10095;</button>
+        <button class="experts-arrow experts-next" aria-label="Next experts">❯</button>
       </div>
     </div>
   </section>
 
-<!-- ============================================================ -->
-<section id="experts" class="bg-[#faf4ef] py-20 sm:py-28 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
-    <div class="flex items-end justify-between gap-6">
-      <div>
-        <p data-fade class="text-xs font-medium tracking-[0.25em] uppercase text-[#f05a28] mb-5">Our experts</p>
-        <h2 data-chars data-char-delay="18" data-char-duration="400"
-            class="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1a1511]" style="letter-spacing: -0.04em;">
-          The minds, <span class="text-[#f05a28]">by name.</span>
-        </h2>
-        <p data-fade="up" data-delay="200" class="mt-5 text-base text-[#5b554f] leading-relaxed max-w-xl">
-          Senior operators who have already led at the scale you are building toward — available for focused, hands-on mandates.
-        </p>
-      </div>
-      <div data-fade data-delay="400" class="hidden sm:flex items-center gap-3 shrink-0 pb-1">
-        <button id="carousel-prev" aria-label="Previous experts" class="liquid-glass flex items-center justify-center w-11 h-11 rounded-lg border border-[#1a1511]/10 text-[#1a1511] hover:bg-[#f05a28] hover:text-white transition-colors duration-300">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-        </button>
-        <button id="carousel-next" aria-label="Next experts" class="flex items-center justify-center w-11 h-11 rounded-lg bg-[#f05a28] text-white hover:bg-[#d94a1a] transition-colors">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 6 — WHY SWYN EXISTS (React Component)
+       ═══════════════════════════════════════════════════════════ -->
+  <div id="why-swyn-root"></div>
 
-  <div class="mt-10 sm:mt-12">
-    <div id="experts-track" class="no-scrollbar flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory px-6 md:px-12 lg:px-16 pb-2">
-      <!-- Cards injected by JS -->
-    </div>
-  </div>
-</section>
 
-<!-- ============================================================ -->
-<!-- QUOTE BAND -->
-<!-- ============================================================ -->
-<section class="bg-[#f05a28] py-24 sm:py-32 px-6 md:px-12 lg:px-16">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 data-words data-word-delay="80"
-        class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal leading-tight text-white" style="letter-spacing: -0.03em;">
-      &ldquo;What got you to this milestone <span class="text-white/75">will not get you to the next.&rdquo;</span>
-    </h2>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- OUR CAPABILITIES -->
-<!-- ============================================================ -->
-<section id="disciplines-root" class="bg-white py-20 sm:py-28 px-6 md:px-12 lg:px-16">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center">
-      <p data-fade class="text-xs font-medium tracking-[0.25em] uppercase text-[#f05a28] mb-5">Our capabilities</p>
-      <h2 data-chars data-char-delay="18" data-char-duration="400"
-          class="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1a1511]" style="letter-spacing: -0.04em;">
-        Six functions. <span class="text-[#f05a28]">One operator per engagement.</span>
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 8 — MILESTONE OVERLAY
+       ═══════════════════════════════════════════════════════════ -->
+  <section id="milestone" style="position: relative; height: 35vh; min-height: 350px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <!-- Background Image -->
+    <div style="position: absolute; inset: 0; background-image: url('./milestone-bg.png'); background-size: cover; background-position: center 30%; z-index: 0;"></div>
+    <!-- Dark Gradient Overlay for Legibility -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(19,19,22,0.3) 0%, rgba(19,19,22,0.7) 100%); z-index: 1;"></div>
+    
+    <div class="container fade-in" style="position: relative; z-index: 2; text-align: center;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 3rem); font-style: italic; font-weight: 400; line-height: 1.3; color: var(--text-cream); margin: 0; max-width: 900px; margin-inline: auto;">
+        "What got you to this milestone will not get you to the next."
       </h2>
-      <p data-fade="up" data-delay="200" class="mt-6 text-base md:text-lg text-[#5b554f] leading-relaxed max-w-xl mx-auto">
-        Each engagement is anchored in one function. The operator is matched to the specific problem inside it.
-      </p>
     </div>
+  </section>
 
-    <div class="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-
-      <div data-fade="up" data-delay="0" class="liquid-glass rounded-xl p-7 sm:p-8 flex flex-col">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">i / Finance</p>
-        <h3 class="mt-4 text-xl sm:text-2xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Unit Economics</h3>
-        <p class="mt-3 text-sm text-[#5b554f] leading-relaxed flex-1">Margin design, contribution modelling, pricing. A finance function that holds up under board scrutiny.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Margin design</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">CAC and LTV</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Pricing</span>
+  <section class="section section--warm about-founder" id="about-us">
+    <div class="container">
+      <div class="about-founder__grid">
+        <div class="about-founder__intro fade-in">
+          <span class="eyebrow eyebrow--dark">About us</span>
+          <h2 class="section__headline section__headline--dark">
+            Led by people who understand the weight of senior decisions.
+          </h2>
+          <p class="section__text section__text--dark">
+            SWYN was created to help Indian companies access seasoned leadership at the exact moment it matters: during growth, transition, transformation, or a high-stakes mandate.
+          </p>
         </div>
-      </div>
 
-      <div data-fade="up" data-delay="100" class="liquid-glass rounded-xl p-7 sm:p-8 flex flex-col">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">ii / Revenue</p>
-        <h3 class="mt-4 text-xl sm:text-2xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Sales Architecture</h3>
-        <p class="mt-3 text-sm text-[#5b554f] leading-relaxed flex-1">Pipeline, playbook, territory, compensation. Designed by an operator who has carried the number themselves.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">GTM strategy</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Sales operations</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Enablement</span>
-        </div>
-      </div>
-
-      <div data-fade="up" data-delay="200" class="liquid-glass rounded-xl p-7 sm:p-8 flex flex-col">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">iii / Operations</p>
-        <h3 class="mt-4 text-xl sm:text-2xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Operational Frameworks</h3>
-        <p class="mt-3 text-sm text-[#5b554f] leading-relaxed flex-1">Planning cycles, ownership, reporting cadence. The operating discipline a business carries into its next hundred crore.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Operating cadence</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Org design</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">KPI systems</span>
-        </div>
-      </div>
-
-      <div data-fade="up" data-delay="0" class="liquid-glass rounded-xl p-7 sm:p-8 flex flex-col">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">iv / Strategy</p>
-        <h3 class="mt-4 text-xl sm:text-2xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Growth Strategy</h3>
-        <p class="mt-3 text-sm text-[#5b554f] leading-relaxed flex-1">Category positioning, channel mix, growth model. The strategic spine of the next twenty-four months.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Category strategy</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Channel mix</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Growth model</span>
-        </div>
-      </div>
-
-      <div data-fade="up" data-delay="100" class="liquid-glass rounded-xl p-7 sm:p-8 flex flex-col">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">v / Capital</p>
-        <h3 class="mt-4 text-xl sm:text-2xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Funding &amp; Financial Advisory</h3>
-        <p class="mt-3 text-sm text-[#5b554f] leading-relaxed flex-1">Raise readiness, investor narrative, board packs. The work of a Series-stage CFO without the permanent commitment.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Raise readiness</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Investor relations</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Board packs</span>
-        </div>
-      </div>
-
-      <div data-fade="up" data-delay="200" class="liquid-glass rounded-xl p-7 sm:p-8 flex flex-col">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">vi / Markets</p>
-        <h3 class="mt-4 text-xl sm:text-2xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Business Expansion</h3>
-        <p class="mt-3 text-sm text-[#5b554f] leading-relaxed flex-1">Geographic entry, partnership architecture, M&amp;A readiness. Built by an operator who has run an expansion at scale.</p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Geographic entry</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">Partnerships</span>
-          <span class="text-xs text-[#c24914] bg-[#fff1ea] border border-[#f05a28]/20 rounded-full px-3 py-1.5">M&amp;A readiness</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- HOW IT WORKS -->
-<!-- ============================================================ -->
-<section id="process-root" class="bg-[#faf4ef] py-20 sm:py-28 px-6 md:px-12 lg:px-16">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center">
-      <p data-fade class="text-xs font-medium tracking-[0.25em] uppercase text-[#f05a28] mb-5">How it works</p>
-      <h2 data-chars data-char-delay="18" data-char-duration="400"
-          class="text-3xl md:text-4xl lg:text-5xl font-normal max-w-3xl mx-auto text-[#1a1511]" style="letter-spacing: -0.04em;">
-        The same operator, on a model the business <span class="text-[#f05a28]">can actually carry.</span>
-      </h2>
-      <p data-fade="up" data-delay="200" class="mt-6 text-base md:text-lg text-[#5b554f] leading-relaxed max-w-2xl mx-auto">
-        SWYN places senior operators inside Indian businesses on a fractional engagement. Two to four days a month, embedded with leadership, accountable to the outcome of the function.
-      </p>
-    </div>
-
-    <div class="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-      <div data-fade="up" data-delay="0" class="liquid-glass rounded-xl p-7 flex flex-col">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-[#f05a28] text-white text-sm font-medium">1</span>
-        <h3 class="mt-5 text-lg sm:text-xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Strategy call</h3>
-        <p class="mt-2 text-sm text-[#5b554f] leading-relaxed">Thirty minutes with our team to diagnose the function.</p>
-      </div>
-      <div data-fade="up" data-delay="100" class="liquid-glass rounded-xl p-7 flex flex-col">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-[#f05a28] text-white text-sm font-medium">2</span>
-        <h3 class="mt-5 text-lg sm:text-xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Shortlist</h3>
-        <p class="mt-2 text-sm text-[#5b554f] leading-relaxed">Two or three operators matched to your specific problem.</p>
-      </div>
-      <div data-fade="up" data-delay="200" class="liquid-glass rounded-xl p-7 flex flex-col">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-[#f05a28] text-white text-sm font-medium">3</span>
-        <h3 class="mt-5 text-lg sm:text-xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">Engagement</h3>
-        <p class="mt-2 text-sm text-[#5b554f] leading-relaxed">Begins within two weeks. Defined scope, defined term, defined outcome.</p>
-      </div>
-      <div data-fade="up" data-delay="300" class="liquid-glass rounded-xl p-7 flex flex-col">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full bg-[#f05a28] text-white text-sm font-medium">4</span>
-        <h3 class="mt-5 text-lg sm:text-xl font-normal text-[#1a1511]" style="letter-spacing:-0.02em;">The work stays</h3>
-        <p class="mt-2 text-sm text-[#5b554f] leading-relaxed">Frameworks run on your team after the engagement ends.</p>
+        <article class="founder-card fade-in" aria-labelledby="founder-name">
+          <div class="founder-card__portrait">
+            <img
+              src="/shaamlie-hero.jpg"
+              alt="Shaamlie Anggane, Founder and CEO of SWYN"
+              width="1024"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="founder-card__content">
+            <span class="founder-card__role">Founder &amp; CEO</span>
+            <h3 class="founder-card__name" id="founder-name">Shaamlie Anggane</h3>
+            <p class="founder-card__bio">
+              Shaamlie brings over 23 years of experience across some of the world's most demanding financial institutions — Nomura, Deutsche Bank, UBS, and Morgan Stanley — where she held senior leadership roles spanning COO, Business Management, and operational strategy across India and global markets.
+            </p>
+            <p class="founder-card__note">
+              SWYN was built on a simple idea, growing businesses should have access to experienced leadership without the commitment of a permanent executive hire. The foundation of SWYN is built on the belief that the right expertise, delivered at the right time, can create meaningful business impact. Today, SWYN helps companies engage seasoned CXOs and domain experts who bring practical experience, strategic insight, and measurable impact.
+            </p>
+            <a
+              class="founder-card__link"
+              href="https://www.linkedin.com/in/shaamlie-anggane-81201713"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Shaamlie on LinkedIn <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================ -->
-<!-- ABOUT -->
-<!-- ============================================================ -->
-<section id="about-us" class="bg-white py-20 sm:py-28 px-6 md:px-12 lg:px-16">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center">
-      <p data-fade class="text-xs font-medium tracking-[0.25em] uppercase text-[#f05a28] mb-5">About us</p>
-      <h2 data-chars data-char-delay="18" data-char-duration="400"
-          class="text-3xl md:text-4xl lg:text-5xl font-normal max-w-3xl mx-auto text-[#1a1511]" style="letter-spacing: -0.04em;">
-        Led by people who understand <span class="text-[#f05a28]">the weight of senior decisions.</span>
-      </h2>
-      <p data-fade="up" data-delay="200" class="mt-6 text-base md:text-lg text-[#5b554f] leading-relaxed max-w-2xl mx-auto">
-        SWYN was created to help Indian companies access seasoned leadership at the exact moment it matters: during growth, transition, transformation, or a high-stakes mandate.
-      </p>
-    </div>
-
-    <div class="mt-12 sm:mt-16 grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-14 items-center">
-      <div data-fade="up" data-delay="0" class="lg:col-span-2">
-        <div class="liquid-glass rounded-xl overflow-hidden">
-          <img src="./shaamlie-hero.jpg" alt="Shaamlie Anggane, Founder and CEO of SWYN" class="w-full h-full object-cover" loading="lazy" />
+  <!-- ═══════════════════════════════════════════════════════════
+       SECTION 9 — FOOTER
+       ═══════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Huge Branding Area -->
+        <div class="footer__brand">
+          <a href="#" class="footer__brand-link">
+            <img src="./reallogo.png" alt="SWYN Logo" class="footer__brand-img" />
+            <span class="footer__brand-text">SWYN</span>
+          </a>
+          <p class="footer__brand-tagline">Deploy the minds that built the giants.</p>
+        </div>
+        
+        <!-- Link Columns -->
+        <div class="footer__columns">
+          <div class="footer__col">
+            <span class="footer__col-title">Platform</span>
+            <a href="#what-we-do" class="footer__link">How we work</a>
+            <a href="#disciplines-root" class="footer__link">Our capabilities</a>
+            <a href="#process-root" class="footer__link">How it works</a>
+            <a href="./client-brief.html" class="footer__link">Find a CXO</a>
+            <a href="./explore.html" class="footer__link">Explore</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Company</span>
+            <a href="#about-us" class="footer__link">About Us</a>
+            <a href="./careers.html" class="footer__link">Careers</a>
+            <a href="#" class="footer__link">Contact</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Legal</span>
+            <a href="#" class="footer__link">Privacy Policy</a>
+            <a href="#" class="footer__link">Terms of Service</a>
+            <a href="#" class="footer__link">Cookie Policy</a>
+          </div>
         </div>
       </div>
-      <div data-fade="up" data-delay="150" class="lg:col-span-3">
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">Founder &amp; CEO</p>
-        <h3 class="mt-3 text-2xl sm:text-3xl md:text-4xl font-normal text-[#1a1511]" style="letter-spacing:-0.03em;">Shaamlie Anggane</h3>
-        <p class="mt-5 text-sm sm:text-base text-[#5b554f] leading-relaxed">
-          Shaamlie brings over 23 years of experience across some of the world&rsquo;s most demanding financial institutions — Nomura, Deutsche Bank, UBS, and Morgan Stanley — where she held senior leadership roles spanning COO, Business Management, and operational strategy across India and global markets.
-        </p>
-        <p class="mt-4 text-sm sm:text-base text-[#5b554f] leading-relaxed">
-          SWYN was built on a simple idea, growing businesses should have access to experienced leadership without the commitment of a permanent executive hire. The foundation of SWYN is built on the belief that the right expertise, delivered at the right time, can create meaningful business impact. Today, SWYN helps companies engage seasoned CXOs and domain experts who bring practical experience, strategic insight, and measurable impact.
-        </p>
-        <a href="https://www.linkedin.com/in/shaamlie-anggane-81201713" target="_blank" rel="noopener" class="mt-7 inline-block bg-[#f05a28] text-white text-sm font-medium px-8 py-3 rounded-lg hover:bg-[#d94a1a] transition-colors">
-          View Shaamlie on LinkedIn &rarr;
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- CTA BAND -->
-<!-- ============================================================ -->
-<section class="bg-[#faf4ef] py-20 sm:py-24 px-6 md:px-12 lg:px-16">
-  <div class="max-w-4xl mx-auto text-center">
-    <h2 data-chars data-char-delay="24" data-char-duration="450"
-        class="text-3xl md:text-4xl lg:text-5xl font-normal text-[#1a1511]" style="letter-spacing: -0.04em;">
-      Tell us who <span class="text-[#f05a28]">you need.</span>
-    </h2>
-    <p data-fade="up" data-delay="200" class="mt-5 text-base text-[#5b554f] leading-relaxed max-w-md mx-auto">
-      Weeks, not months, to deploy. One firm built for what&rsquo;s next.
-    </p>
-    <div data-fade="up" data-delay="400" class="mt-8 flex items-center justify-center gap-4 flex-wrap">
-      <a href="https://swynconsulting.com/client-brief.html" class="bg-[#f05a28] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#d94a1a] transition-colors">Find a CXO &rarr;</a>
-      <a href="https://swynconsulting.com/expert-apply.html" class="liquid-glass border border-[#1a1511]/10 text-[#1a1511] px-8 py-3 rounded-lg font-medium hover:bg-[#f05a28] hover:text-white transition-colors duration-300">Apply as an expert</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ -->
-<!-- FOOTER -->
-<!-- ============================================================ -->
-<footer class="bg-white border-t border-[#1a1511]/10 pt-16 sm:pt-20 pb-10 px-6 md:px-12 lg:px-16">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
-      <div class="md:col-span-2">
-        <a href="#top" class="flex items-center gap-2 text-[#1a1511]">
-          <img src="./reallogo.png" alt="SWYN logo" class="h-8 w-auto" />
-          <span class="text-xl font-semibold tracking-tight">SWYN</span>
-        </a>
-        <p class="mt-4 text-sm text-[#8d847b] leading-relaxed max-w-xs">Deploy the minds that built the giants.</p>
-      </div>
-      <div>
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">Platform</p>
-        <div class="mt-4 flex flex-col gap-3 text-sm">
-          <a href="#what-we-do" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">How we work</a>
-          <a href="#disciplines-root" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Our capabilities</a>
-          <a href="#process-root" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">How it works</a>
-          <a href="https://swynconsulting.com/client-brief.html" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Find a CXO</a>
-          <a href="https://swynconsulting.com/explore.html" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Explore</a>
-        </div>
-      </div>
-      <div>
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">Company</p>
-        <div class="mt-4 flex flex-col gap-3 text-sm">
-          <a href="#about-us" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">About Us</a>
-          <a href="https://swynconsulting.com/careers.html" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Careers</a>
-          <a href="#" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Contact</a>
-        </div>
-      </div>
-      <div>
-        <p class="text-xs font-medium tracking-[0.2em] uppercase text-[#f05a28]">Legal</p>
-        <div class="mt-4 flex flex-col gap-3 text-sm">
-          <a href="#" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Privacy Policy</a>
-          <a href="#" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Terms of Service</a>
-          <a href="#" class="text-[#5b554f] hover:text-[#f05a28] transition-colors">Cookie Policy</a>
+      
+      <!-- Bottom Legal Bar -->
+      <div class="footer__bottom">
+        <span>© 2025 SWYN. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="https://www.linkedin.com/company/skillswhichyouneed/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </div>
-    <div class="mt-14 pt-8 border-t border-[#1a1511]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-xs text-[#8d847b]">&copy; 2025 SWYN. All rights reserved.</p>
-      <a href="https://www.linkedin.com/company/skillswhichyouneed/" target="_blank" rel="noopener" class="text-xs text-[#8d847b] hover:text-[#f05a28] transition-colors">LinkedIn</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-/* ============================================================
-   Animation system
-   One family, varied parameters per element:
-   - data-chars: character-by-character stagger. Params:
-     data-char-delay (ms/char), data-char-duration (ms),
-     data-start-delay (ms). Hero uses 30/500/200; section
-     headings use 18/400/0; CTA uses 24/450/0.
-   - data-words: word-by-word rise (quote). Param: data-word-delay.
-   - data-fade / data-fade="up": opacity (and lift) reveal.
-     Params: data-delay (ms), data-duration (ms).
-   All reveals trigger on viewport entry via IntersectionObserver;
-   above-the-fold hero elements therefore fire on load with their
-   own 200 / 800 / 1200 / 1400ms delays, per the spec.
-============================================================ */
-(function () {
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* --- Split helpers ------------------------------------------------ */
-  function collectTextNodes(el) {
-    var nodes = [];
-    (function walk(n) {
-      Array.prototype.forEach.call(n.childNodes, function (c) {
-        if (c.nodeType === 3) nodes.push(c);
-        else if (c.nodeType === 1 && c.tagName !== 'BR') walk(c);
-      });
-    })(el);
-    return nodes;
-  }
-
-  function wrapChars(el, duration) {
-    var spans = [];
-    collectTextNodes(el).forEach(function (textNode) {
-      var frag = document.createDocumentFragment();
-      var text = textNode.textContent;
-      for (var i = 0; i < text.length; i++) {
-        var s = document.createElement('span');
-        s.className = 'char';
-        s.textContent = text[i] === ' ' ? '\u00A0' : text[i];
-        if (duration) s.style.transitionDuration = duration + 'ms';
-        frag.appendChild(s);
-        spans.push(s);
-      }
-      textNode.parentNode.replaceChild(frag, textNode);
-    });
-    return spans;
-  }
-
-  function wrapWords(el) {
-    var spans = [];
-    collectTextNodes(el).forEach(function (textNode) {
-      var frag = document.createDocumentFragment();
-      var parts = textNode.textContent.split(/(\s+)/);
-      parts.forEach(function (part) {
-        if (part === '') return;
-        if (/^\s+$/.test(part)) {
-          frag.appendChild(document.createTextNode(' '));
-        } else {
-          var s = document.createElement('span');
-          s.className = 'word';
-          s.textContent = part;
-          frag.appendChild(s);
-          spans.push(s);
-        }
-      });
-      textNode.parentNode.replaceChild(frag, textNode);
-    });
-    return spans;
-  }
-
-  /* --- Prepare elements --------------------------------------------- */
-  var charEls = [];
-  document.querySelectorAll('[data-chars]').forEach(function (el) {
-    var duration = parseInt(el.getAttribute('data-char-duration'), 10) || 500;
-    charEls.push({
-      el: el,
-      spans: reduced ? [] : wrapChars(el, duration),
-      charDelay: parseInt(el.getAttribute('data-char-delay'), 10) || 30,
-      startDelay: parseInt(el.getAttribute('data-start-delay'), 10) || 0,
-      played: false
-    });
-  });
-
-  var wordEls = [];
-  document.querySelectorAll('[data-words]').forEach(function (el) {
-    wordEls.push({
-      el: el,
-      spans: reduced ? [] : wrapWords(el),
-      wordDelay: parseInt(el.getAttribute('data-word-delay'), 10) || 80,
-      played: false
-    });
-  });
-
-  function playChars(item) {
-    if (item.played) return;
-    item.played = true;
-    item.spans.forEach(function (s, i) {
-      setTimeout(function () { s.classList.add('in'); }, item.startDelay + i * item.charDelay);
-    });
-  }
-
-  function playWords(item) {
-    if (item.played) return;
-    item.played = true;
-    item.spans.forEach(function (s, i) {
-      setTimeout(function () { s.classList.add('in'); }, i * item.wordDelay);
-    });
-  }
-
-  function revealFade(el) {
-    var delay = parseInt(el.getAttribute('data-delay'), 10) || 0;
-    var duration = parseInt(el.getAttribute('data-duration'), 10) || 1000;
-    el.style.transitionDuration = duration + 'ms';
-    el.style.transitionDelay = delay + 'ms';
-    el.classList.add('faded');
-  }
-
-  /* --- Observer ------------------------------------------------------ */
-  function initObserver() {
-    var fadeEls = Array.prototype.slice.call(document.querySelectorAll('[data-fade]'));
-
-    if (reduced || !('IntersectionObserver' in window)) {
-      fadeEls.forEach(function (el) { el.classList.add('faded'); el.style.transition = 'none'; });
-      charEls.forEach(function (i) { i.played = true; });
-      wordEls.forEach(function (i) { i.played = true; });
-      return;
-    }
-
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var t = entry.target;
-        if (t.hasAttribute('data-fade')) revealFade(t);
-        charEls.forEach(function (i) { if (i.el === t) playChars(i); });
-        wordEls.forEach(function (i) { if (i.el === t) playWords(i); });
-        io.unobserve(t);
-      });
-    }, { threshold: 0.15 });
-
-    fadeEls.forEach(function (el) { io.observe(el); });
-    charEls.forEach(function (i) { io.observe(i.el); });
-    wordEls.forEach(function (i) { io.observe(i.el); });
-  }
-
-  var prev = document.getElementById('carousel-prev');
-    var next = document.getElementById('carousel-next');
-    var step = function () { return Math.min(track.clientWidth, 320); };
-    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
-    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
-  }
-
-  initObserver();
-})();
-
-/* ============================================================
-   Mobile menu (frosted white drawer, staggered links)
-============================================================ */
-(function () {
-  var btn = document.getElementById('menu-btn');
-  var overlay = document.getElementById('mobile-overlay');
-  var drawer = document.getElementById('mobile-drawer');
-  var closeBtn = document.getElementById('drawer-close');
-  var iconMenu = document.getElementById('icon-menu');
-  var iconX = document.getElementById('icon-x');
-  var links = Array.prototype.slice.call(document.querySelectorAll('.drawer-item'));
-  var cta = document.getElementById('drawer-cta');
-  var open = false;
-
-  function setOpen(next) {
-    open = next;
-    document.body.style.overflow = open ? 'hidden' : '';
-    btn.setAttribute('aria-expanded', String(open));
-    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-
-    if (open) {
-      iconMenu.classList.remove('opacity-100', 'rotate-0', 'scale-100');
-      iconMenu.classList.add('opacity-0', 'rotate-90', 'scale-50');
-      iconX.classList.remove('opacity-0', '-rotate-90', 'scale-50');
-      iconX.classList.add('opacity-100', 'rotate-0', 'scale-100');
-    } else {
-      iconMenu.classList.add('opacity-100', 'rotate-0', 'scale-100');
-      iconMenu.classList.remove('opacity-0', 'rotate-90', 'scale-50');
-      iconX.classList.add('opacity-0', '-rotate-90', 'scale-50');
-      iconX.classList.remove('opacity-100', 'rotate-0', 'scale-100');
-    }
-
-    overlay.classList.toggle('opacity-100', open);
-    overlay.classList.toggle('pointer-events-auto', open);
-    overlay.classList.toggle('opacity-0', !open);
-    overlay.classList.toggle('pointer-events-none', !open);
-
-    drawer.classList.toggle('translate-x-0', open);
-    drawer.classList.toggle('translate-x-full', !open);
-
-    links.forEach(function (link) {
-      var i = parseInt(link.getAttribute('data-i'), 10) || 0;
-      link.style.transitionDelay = open ? (150 + i * 70) + 'ms' : '0ms';
-      link.classList.toggle('translate-x-0', open);
-      link.classList.toggle('opacity-100', open);
-      link.classList.toggle('translate-x-8', !open);
-      link.classList.toggle('opacity-0', !open);
-    });
-
-    cta.style.transitionDelay = open ? '430ms' : '0ms';
-    cta.classList.toggle('translate-x-0', open);
-    cta.classList.toggle('opacity-100', open);
-    cta.classList.toggle('translate-x-8', !open);
-    cta.classList.toggle('opacity-0', !open);
-  }
-
-  btn.addEventListener('click', function () { setOpen(!open); });
-  closeBtn.addEventListener('click', function () { setOpen(false); });
-  overlay.addEventListener('click', function () { setOpen(false); });
-  links.forEach(function (link) {
-    link.addEventListener('click', function () { setOpen(false); });
-  });
-})();
-</script>
-
+  <script type="module" src="./process-mount.jsx"></script>
+  <script type="module" src="./carousel-mount.jsx"></script>
+  <script type="module" src="./accordion-mount.jsx"></script>
+  <script type="module" src="./why-swyn-mount.jsx"></script>
+  <script type="module" src="./experts.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
