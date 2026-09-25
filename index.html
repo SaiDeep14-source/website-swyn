@@ -662,7 +662,7 @@
   /* --- Experts carousel (inject before observing) -------------------- */
   var experts = [
     { name: 'Rajnish Virmani', role: 'Fractional CEO', formerly: 'Zoom \u00b7 Reliance BPO', img: '/experts/rajnish-virmani.png' },
-    { name: 'Rohith Ghosh', role: 'Fractional CEO', formerly: 'WNS \u00b7 HDFC Credila \u00b7 NIIT', img: '/experts/rohith-ghosh.png' },
+    { name: 'Rohit Ghosh', role: 'Fractional CEO', formerly: 'WNS \u00b7 HDFC Credila \u00b7 NIIT', img: '/experts/rohith-ghosh.png' },
     { name: 'Gauri Chandra', role: 'Fractional CEO', formerly: 'J.P. Morgan \u00b7 American Express', img: '/experts/gauri-k.png' },
     { name: 'Ashish Anand', role: 'Fractional CMO', formerly: 'CK Birla Group \u00b7 OYO', img: '/experts/ashish-anand.png' },
     { name: 'Sandeep Suri', role: 'Fractional CEO', formerly: 'Fidelity Investments \u00b7 MyDigitalCube', img: '/experts/sandeep-suri.png' },
@@ -683,7 +683,8 @@
       card.setAttribute('data-delay', String(Math.min(i, 4) * 90));
       card.innerHTML =
         '<div class="relative h-[300px] sm:h-[330px] bg-[#fff1ea]">' +
-          '<img src="' + e.img + '" alt="' + e.name + '" class="w-full h-full object-cover object-top" loading="lazy" />' +
+          '<div class="absolute inset-0 flex items-center justify-center text-5xl font-medium tracking-wide text-[#f05a28]" aria-hidden="true">' + e.name.split(/\s+/).map(function (part) { return part.charAt(0); }).slice(0, 2).join('') + '</div>' +
+          '<img src="' + (location.protocol === 'file:' ? './public' : '') + e.img + '" alt="' + e.name + '" class="relative z-[1] w-full h-full object-cover object-top" loading="lazy" onerror="this.hidden=true" />' +
           '<span class="liquid-glass absolute top-4 left-4 text-xs font-medium text-[#1a1511] rounded-full px-3 py-1.5">' + e.role + '</span>' +
         '</div>' +
         '<div class="p-5">' +
